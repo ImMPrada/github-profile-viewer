@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 
 
-const AppContainer = ({children}) => {
+const MainContainer = ({children}) => {
   const { theme } = useContext(GlobalContext);
 
   return (
@@ -12,4 +12,4 @@ const AppContainer = ({children}) => {
   )  
 }
 
-export default AppContainer;
+export default MainContainer;
