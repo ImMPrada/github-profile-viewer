@@ -20,40 +20,43 @@
   }
 }
 
-.header {
-  background: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 31px 24px 0 24px;
-  margin-bottom: 36px;
+#main {
+
+  .header {
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 31px 24px 0 24px;
+    margin-bottom: 36px;
+    
+    @include space-mono-700-bold;
   
-  @include space-mono-700-bold;
-
-  h1 {
-    font-size: 26px;
-    line-height: 1.5;
-    text-align: left;
+    h1 {
+      font-size: 26px;
+      line-height: 1.5;
+      text-align: left;
+    }
+  
+    button {
+      font-size: 13px;
+      line-height: 1.5;
+      letter-spacing: 2.5px;
+      text-align: right;
+  
+      padding: 0;
+      border: 0;
+      outline: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  
   }
-
-  button {
-    font-size: 13px;
-    line-height: 1.5;
-    letter-spacing: 2.5px;
-    text-align: right;
-
-    padding: 0;
-    border: 0;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
+  
+  .header-dark {
+    @include light-mode;
   }
-
-}
-
-.header-dark {
-  @include light-mode;
-}
-
-.header-light {
-  @include dark-mode;
+  
+  .header-light {
+    @include dark-mode;
+  }
 }
