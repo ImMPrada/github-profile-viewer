@@ -3,12 +3,12 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 
 
 const Header = () => {
-  const { theme, setTheme } = useContext(GlobalContext);
+  const { theme, changeTheme } = useContext(GlobalContext);
 
   return (
     <div className = {`header header-${theme}`}>
       <h1>devfinder</h1>
-      <button>DARK</button>
+      <button onClick={ () => changeTheme(theme) }>{theme}</button>
     </div>
   )  
 }

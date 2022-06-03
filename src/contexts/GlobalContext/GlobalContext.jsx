@@ -1,22 +1,23 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
+const themeKeys = {
+  dark: 'light',
+  light: 'dark',
+}
 
 export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
-  const [theme, setTheme] = useState(null);
-  
+  const [theme, setTheme] = useState(themeKeys.light);
 
-  useEffect(()=> {
-
-    setTheme('light')
-  }, [])
-
+  const changeTheme = () => {
+    setTheme(themeKeys[theme])
+  }
 
   const contextVal = {
     theme,
 
-    setTheme,
+    changeTheme,
   }
 
   return (
