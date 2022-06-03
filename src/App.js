@@ -1,10 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import { GlobalProvider } from './contexts/GlobalContext';
 
 function App() {
   return (
     <div className="App">
-      <h1>HOLI</h1>
+      <GlobalProvider>
+        <h1>HOLI</h1>
+      </GlobalProvider>
     </div>
   );
 }
