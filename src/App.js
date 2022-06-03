@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Header } from './components'
 
 function App() {
   return (
     <div className="App">
-      <h1>HOLI</h1>
+      <Header />
     </div>
   );
 }

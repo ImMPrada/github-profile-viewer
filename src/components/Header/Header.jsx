@@ -1,10 +1,14 @@
 import React from "react";
 
+const mode = 'dark'
+
+
 const Header = () => {
 
   return (
-    <div className="header">
-      <h1>The header</h1>
+    <div className = {`header header-${mode}`}>
+      <h1>devfinder</h1>
+      <button>DARK</button>
     </div>
   )  
 }
