@@ -23,6 +23,7 @@
 #main {
 
   .header {
+
     background: none;
     display: flex;
     justify-content: space-between;
@@ -47,6 +48,7 @@
     }
   
     button {
+
       font-size: 13px;
       line-height: 1.5;
       letter-spacing: 2.5px;
@@ -57,6 +59,10 @@
       outline: none;
       background-color: transparent;
       cursor: pointer;
+
+      svg {
+        margin-left: 10px;
+      }
     }
   
   }

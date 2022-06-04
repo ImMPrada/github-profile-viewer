@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { Moon, Sun } from "../../icons"
 
 
 const Header = () => {
@@ -8,7 +9,9 @@ const Header = () => {
   return (
     <div className = {`header header-${theme}`}>
       <h1>devfinder</h1>
-      <button onClick={ () => changeTheme(theme) }>{theme}</button>
+      <button onClick={ () => changeTheme(theme) }>
+        {theme}{theme === 'dark' ? <Moon /> : <Sun />}
+      </button>
     </div>
   )  
 }
