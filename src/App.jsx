@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainContainer, Header } from './components'
+import { MainContainer, Header, SearchBox } from './components'
 import { GlobalProvider } from './contexts/GlobalContext';
 
 const App = () => {
@@ -8,6 +8,7 @@ const App = () => {
       <GlobalProvider>
         <MainContainer>
           <Header />
+          <SearchBox />
         </MainContainer>
       </GlobalProvider>
     </div>
