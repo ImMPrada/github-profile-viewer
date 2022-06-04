@@ -28,6 +28,15 @@
     justify-content: space-between;
     padding: 31px 24px 0 24px;
     margin-bottom: 36px;
+
+    @media screen and (min-width: $br-s) {
+      max-width: 573px;
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: $br-m) {
+      max-width: 730px;
+    }
     
     @include space-mono-700-bold;
   
