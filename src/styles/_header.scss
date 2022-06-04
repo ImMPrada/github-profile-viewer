@@ -1,0 +1,77 @@
+@mixin light-mode {
+  
+  h1 {
+    color: $color-light-black;
+  }
+
+  button {
+    color: $color-light-grey-blue;
+  }
+}
+
+@mixin dark-mode {
+  
+  h1 {
+    color: $color-dark-grey;
+  }
+
+  button {
+    color: $color-dark-grey;
+  }
+}
+
+#main {
+
+  .header {
+
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 31px 24px 0 24px;
+    margin-bottom: 36px;
+
+    @media screen and (min-width: $br-s) {
+      max-width: 573px;
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: $br-m) {
+      max-width: 730px;
+    }
+    
+    @include space-mono-700-bold;
+  
+    h1 {
+      font-size: 26px;
+      line-height: 1.5;
+      text-align: left;
+    }
+  
+    button {
+
+      font-size: 13px;
+      line-height: 1.5;
+      letter-spacing: 2.5px;
+      text-align: right;
+  
+      padding: 0;
+      border: 0;
+      outline: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      svg {
+        margin-left: 10px;
+      }
+    }
+  
+  }
+  
+  .header-dark {
+    @include light-mode;
+  }
+  
+  .header-light {
+    @include dark-mode;
+  }
+}

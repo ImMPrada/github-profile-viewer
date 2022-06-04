@@ -1,11 +1,14 @@
 import React from 'react';
+import { MainContainer, Header } from './components'
 import { GlobalProvider } from './contexts/GlobalContext';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <GlobalProvider>
-        <h1>HOLI</h1>
+        <MainContainer>
+          <Header />
+        </MainContainer>
       </GlobalProvider>
     </div>
   );

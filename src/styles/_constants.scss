@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
+$br-s: 768px;
+$br-m: 1024px;
+
 $color-light-blue: #0079FF;
 $color-light-grey: #697C9A;
 $color-light-grey-blue: #4B6A9B;
 $color-light-black: #2B3442;
+$color-dark-white: #FFFFFF;
 $color-dark-blue: #0079FF;
 $color-dark-grey: #FFFFFF;
 $color-dark-grey-blue: #141D2F;
@@ -21,4 +25,3 @@ $color-global-error: #F74646;
   font-family: 'Space Mono', monospace;
   font-weight: 400;
 }
-
