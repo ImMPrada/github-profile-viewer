@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
-
+import { Search } from '../../icons'
+ 
 
 const SearchBox = () => {
   const { theme } = useContext(GlobalContext);
@@ -8,6 +9,7 @@ const SearchBox = () => {
 
   return (
     <div className = {`searchbox searchbox-${theme}`}>
+      <Search />
       <input 
         type = "text"
         onChange = {(e) => inputValue.search = e.target.value}
