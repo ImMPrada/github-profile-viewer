@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 
 const SearchBox = () => {
+  const { theme } = useContext(GlobalContext);
+  const inputValue = { search: '' };
 
   return (
-    <div className="searchbox">
-      <input type="text" />
-      <button>Search</button>
+    <div className = {`searchbox searchbox-${theme}`}>
+      <input 
+        type = "text"
+        onChange = {(e) => inputValue.search = e.target.value}
+      />
+      <button onClick = {() => console.log(inputValue.search)}>Search</button>
     </div>
   )
 }
