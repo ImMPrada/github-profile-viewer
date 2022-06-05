@@ -24,6 +24,7 @@
 
   .header {
 
+    @include space-mono-700-bold;
     background: none;
     display: flex;
     justify-content: space-between;
@@ -31,8 +32,9 @@
     margin-bottom: 36px;
 
     @include max-width-responsive;
-    
-    @include space-mono-700-bold;
+    @media screen and (min-width: $br-s) {
+      margin-bottom: 35px;
+    }
   
     h1 {
       font-size: 26px;

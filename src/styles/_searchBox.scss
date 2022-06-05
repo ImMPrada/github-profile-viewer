@@ -31,28 +31,28 @@
     input {
 
       width: 100%;
-      font-size: 14px;
-      line-height: 1.5;
-      text-align: left;
-      @include space-mono-400-regular;
-      color: $color-dark-white;
-  
       padding: 12px 16px;
       margin-right: 8px;
       border: 0;
       border-radius: 7px;
+
+      @include space-mono-400-regular;
+      color: $color-dark-white;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;      
     }
 
   
     button {
 
+      @include space-mono-700-bold;
+      color: $color-dark-white;
       font-size: 14px;
       line-height: 1.5;
       text-align: center;
-      @include space-mono-700-bold;
-      color: $color-dark-white;
+      
       background-color: $color-dark-blue;
-  
       padding: 12px 16px;
       border: 0;
       border-radius: 10px;
