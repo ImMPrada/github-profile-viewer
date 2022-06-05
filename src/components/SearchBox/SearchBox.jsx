@@ -11,6 +11,7 @@ const SearchBox = () => {
       <input 
         type = "text"
         onChange = {(e) => inputValue.search = e.target.value}
+        placeholder = "Search GitHub username…"
       />
       <button onClick = {() => console.log(inputValue.search)}>Search</button>
     </div>
