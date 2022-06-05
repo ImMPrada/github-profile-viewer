@@ -25,3 +25,15 @@ $color-global-error: #F74646;
   font-family: 'Space Mono', monospace;
   font-weight: 400;
 }
+
+
+@mixin max-width-responsive {
+  @media screen and (min-width: $br-s) {
+    max-width: 573px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $br-m) {
+    max-width: 730px;
+  }
+}
