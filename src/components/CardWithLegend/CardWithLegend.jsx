@@ -14,6 +14,7 @@ const CardWithLegend = () => {
           <p>{git.created_at}</p>
         </div>
         <a href={git.html_url}>{git.login}</a>
+        <p>{git.bio || 'There is no bio for this user...'}</p>
       </div>
     </div>
   )
