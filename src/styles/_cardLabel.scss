@@ -1,43 +1,92 @@
+@mixin light-mode {
+
+  span, p {
+    color: $color-light-grey;
+  }
+
+  h3 {
+    color: $color-light-black;
+  }
+
+  a {
+    color: $color-light-blue;
+  }
+}
+
+@mixin dark-mode {
+
+  h3, span, p {
+    color: $color-dark-white;
+  }
+
+  a {
+    color: $color-dark-blue;
+  }
+}
+
 
 #main {
 
   .card-label {
 
     display: flex;
-
-    img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-    }
+    background-color: transparent;
+    flex-direction: column;
 
     &__legend {
-      width: 100%;
-      margin-left: 20px;
+      margin-top: 24px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
 
-      &__head {
-        display: flex;
-        flex-direction: column;
+    &__head {
 
-        h3 {
-          @include space-mono-700-bold;
-          font-size: 16px;
-          line-height: 1.5;
+      display: flex;
+      flex-direction: row;
 
-          a {
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+  
+      &__legend {
+        width: 100%;
+        margin-left: 20px;
+  
+        &__info {
+          display: flex;
+          flex-direction: column;
+  
+          h3 {
+            @include space-mono-700-bold;
+            font-size: 16px;
+            line-height: 1.5;
+  
+            a {
+              font-size: 13px;
+              line-height: 1.5;
+            }
+          }
+  
+          p {
+            @include space-mono-400-regular;
             font-size: 13px;
             line-height: 1.5;
+  
+            margin-top: 6px;
           }
-        }
-
-        p {
-          @include space-mono-400-regular;
-          font-size: 13px;
-          line-height: 1.5;
-
-          margin-top: 6px;
         }
       }
     }
+
+  }
+
+  .card-label-dark {
+    @include light-mode;
+  }
+
+  .card-label-light {
+    @include dark-mode;
   }
 }
