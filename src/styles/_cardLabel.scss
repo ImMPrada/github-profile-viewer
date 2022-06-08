@@ -37,6 +37,12 @@
       margin-top: 24px;
       font-size: 15px;
       line-height: 1.5;
+
+      @media screen and (min-width: $br-s) {
+        margin: 0;
+        margin-left: 154px;
+        margin-top: -20px;
+      }
     }
 
     &__head {
@@ -48,24 +54,47 @@
         width: 70px;
         height: 70px;
         border-radius: 50%;
+
+        @media screen and (min-width: $br-s) {
+          width: 117px;
+          height: 117px;
+        }
       }
   
       &__legend {
         width: 100%;
         margin-left: 20px;
+
+        @media screen and (min-width: $br-s) {
+          margin-left: 37px;
+        }
   
         &__info {
           display: flex;
           flex-direction: column;
+          
+          @media screen and (min-width: $br-s) {
+            flex-direction: row;
+            justify-content: space-between;
+          }
   
           h3 {
             @include space-mono-700-bold;
             font-size: 16px;
             line-height: 1.5;
+
+            @media screen and (min-width: $br-s) {
+              font-size: 26px;
+            }
   
             a {
               font-size: 13px;
               line-height: 1.5;
+
+              @media screen and (min-width: $br-s) {
+                font-size: 16px;
+                margin-top: 2px;
+              }
             }
           }
   
@@ -73,8 +102,12 @@
             @include space-mono-400-regular;
             font-size: 13px;
             line-height: 1.5;
-  
             margin-top: 6px;
+
+            @media screen and (min-width: $br-s) {
+              margin: 0;
+              font-size: 15px;
+            }
           }
         }
       }
