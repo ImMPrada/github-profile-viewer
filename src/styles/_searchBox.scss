@@ -1,0 +1,76 @@
+@mixin light-mode {
+  background-color: $color-dark-white;
+
+  input {
+    color: $color-light-grey-blue;
+    background-color: $color-dark-white;
+  }
+}
+
+@mixin dark-mode {
+  background-color: $color-dark-black;
+
+  input {
+    color: $color-dark-white;
+    background-color: $color-dark-black;
+  }
+}
+
+#main {
+
+  .searchbox {
+
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin: 0 24px;
+    padding: 6px;
+
+    @include max-width-responsive;
+
+    input {
+
+      width: 100%;
+      padding: 12px 16px;
+      margin-right: 8px;
+      border: 0;
+      border-radius: 7px;
+
+      @include space-mono-400-regular;
+      color: $color-dark-white;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;      
+    }
+
+  
+    button {
+
+      @include space-mono-700-bold;
+      color: $color-dark-white;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+      
+      background-color: $color-dark-blue;
+      padding: 12px 16px;
+      border: 0;
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer;
+
+      svg {
+        margin-left: 10px;
+      }
+    }
+  
+  }
+  
+  .searchbox-dark {
+    @include light-mode;
+  }
+  
+  .searchbox-light {
+    @include dark-mode;
+  }
+}
