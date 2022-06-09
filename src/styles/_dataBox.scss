@@ -1,4 +1,6 @@
 @mixin light-mode {
+  background-color: transparent;
+
   p:nth-child(odd) {
     color: $color-light-grey-blue;
   }
@@ -8,6 +10,8 @@
 }
 
 @mixin dark-mode {
+  background-color: $color-dark-grey-blue;
+
   p {
     color: $color-dark-white;
   }
@@ -22,6 +26,7 @@
     padding: 14px;
     display: flex;
     justify-content: space-around;
+    border-radius: 10px;
 
     &__info {
 
