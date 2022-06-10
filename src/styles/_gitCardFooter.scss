@@ -1,37 +1,33 @@
 @mixin light-mode {
-  
   color: $color-light-grey-blue;
+
+  svg > path {
+    fill: $color-light-grey-blue;
+  }
 }
 
 @mixin dark-mode {
-  
   color: $color-dark-white;
+
+  svg > path {
+    fill: $color-dark-white;
+  }
 }
 
 @mixin element {
+  display: grid;
+  grid-template-columns: [start] 35px [start-end] auto [end];
+  grid-template-rows: [start] 20px [end];
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
   margin-bottom: 10px;
-
-  @media screen and (min-width: $br-s) {
-    width: 50%;
-  }
 
   @include space-mono-400-regular;
   font-size: 13px;
   line-height: 1.5;
 
   @media screen and (min-width: $br-s) {
+    width: 50%;
     font-size: 15px;
-  }
-
-  p {
-    margin-left: 10px;
-
-    @media screen and (min-width: $br-s) {
-      margin-left: 16px;
-    }
   }
 
   &-null {

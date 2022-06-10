@@ -14,7 +14,7 @@ const GitCardFooter = () => {
       </div>
       <div className={`git-card-footer__element${git.blog ? '' : '-null'}`}>
         <Url /> 
-        <p>{git.blog || 'Not Available'}</p>
+        <p>{git.blog.slice(0,6) + '...' + git.blog.slice(-8,-1) || 'Not Available'}</p>
       </div>
       <div className={`git-card-footer__element${git.twitter_username ? '' : '-null'}`}>
         <Twitter /> 
