@@ -28,7 +28,10 @@ const GitCardFooter = () => {
       </div>
       <div className={`git-card-footer__element${git.blog ? '' : '-null'}`}>
         <Url /> 
-        <a href = {getLinkData(git.blog).linkTo} >
+        <a href = {getLinkData(git.blog).linkTo} 
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {getLinkData(git.blog).label || 'Not Available'}
         </a>
       </div>

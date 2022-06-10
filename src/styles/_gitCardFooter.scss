@@ -1,11 +1,17 @@
 @mixin light-mode {
   
   color: $color-light-grey-blue;
+  a {
+    color: $color-light-blue;
+  }
 }
 
 @mixin dark-mode {
   
   color: $color-dark-white;
+  a {
+    color: $color-dark-blue;
+  }
 }
 
 @mixin element {
@@ -26,7 +32,7 @@
     font-size: 15px;
   }
 
-  p {
+  p, a {
     margin-left: 10px;
 
     @media screen and (min-width: $br-s) {
