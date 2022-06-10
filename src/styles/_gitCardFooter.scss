@@ -1,51 +1,55 @@
 @mixin light-mode {
   
-  h1 {
-    color: $color-light-black;
-  }
-
-  button {
-    color: $color-light-grey-blue;
-  }
+  color: $color-light-grey-blue;
 }
 
 @mixin dark-mode {
   
-  h1 {
-    color: $color-dark-grey;
+  color: $color-dark-white;
+}
+
+@mixin element {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+  @include space-mono-400-regular;
+  font-size: 13px;
+  line-height: 1.5;
+
+  p {
+    margin-left: 10px;
   }
 
-  button {
-    color: $color-dark-grey;
+  &-null {
+    color: $color-light-light-grey-blue;
   }
 }
 
 #main {
 
 	.git-card-footer {
+		background-color: transparent;
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 
-		&__element {
-
-			width: 100%;
-			@include space-mono-400-regular;
-			font-size: 13px;
-			line-height: 1.5;
-
-			&-null {
-				color: red;
-			}
+		&__element, &__element-null {
+			@include element;
 		}
+
+    &__element-null {
+			color: $color-light-light-grey-blue;
+		}
+
+    &-dark {
+      @include light-mode;
+    }
+    
+    &-light {
+      @include dark-mode;
+    }
 	}
   
-  .header-dark {
-    @include light-mode;
-  }
-  
-  .header-light {
-    @include dark-mode;
-  }
 }
-

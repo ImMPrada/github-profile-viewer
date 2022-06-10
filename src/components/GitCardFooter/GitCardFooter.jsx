@@ -7,18 +7,22 @@ const GitCardFooter = () => {
   const { theme, git } = useContext(GlobalContext);
 
   return (
-    <div className="git-card-footer">
-      <div className="git-card-footer__element">
-        <p className="git-card-footer__element-null"><LocationPin /> {git.location || 'location'}</p>
+    <div className = {`git-card-footer git-card-footer-${theme}`}>
+      <div className={`git-card-footer__element${git.location ? '' : '-null'}`}>
+        <LocationPin /> 
+        <p>{git.location || 'Not Available'}</p>
       </div>
-      <div className="git-card-footer__element">
-        <p><Url /> {git.blog || 'blog'}</p>
+      <div className={`git-card-footer__element${git.blog ? '' : '-null'}`}>
+        <Url /> 
+        <p>{git.blog || 'Not Available'}</p>
       </div>
-      <div className="git-card-footer__element">
-        <p><Twitter /> {git.twitter_username || 'twitter'}</p>
+      <div className={`git-card-footer__element${git.twitter_username ? '' : '-null'}`}>
+        <Twitter /> 
+        <p>{git.twitter_username || 'Not Available'}</p>
       </div>
-      <div className="git-card-footer__element">
-        <p><Offices /> {git.company || 'company'}</p>
+      <div className={`git-card-footer__element${git.company ? '' : '-null'}`}>
+        <Offices /> 
+        <p>{git.company || 'Not Available'}</p>
       </div>
     </div>
   )
