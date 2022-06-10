@@ -3,21 +3,21 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 
 
 const DataBox = () => {
-  const { theme } = useContext(GlobalContext);
+  const { theme, git } = useContext(GlobalContext);
 
   return (
     <div className={`data-box data-box-${theme}`}>
       <div className="data-box__info">
         <p>Repos</p>
-        <p>9</p>
+        <p>{git.public_repos}</p>
       </div>
       <div className="data-box__info">
         <p>Followers</p>
-        <p>3938</p>
+        <p>{git.followers}</p>
       </div>
       <div className="data-box__info">
         <p>Following</p>
-        <p>9</p>
+        <p>{git.following}</p>
       </div>
     </div>
   )
