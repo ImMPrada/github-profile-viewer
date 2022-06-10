@@ -1,5 +1,10 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { 
+  CardWithLegend,
+  DataBox,
+  GitCardFooter,
+ } from '../'
 
 
 const ProfileCard = () => {
@@ -7,7 +12,9 @@ const ProfileCard = () => {
 
   return (
     <div className = {`profile-card profile-card-${theme}`}>
-      HOLI
+      <CardWithLegend />
+      <DataBox />
+      <GitCardFooter />
     </div>
   )
 }
