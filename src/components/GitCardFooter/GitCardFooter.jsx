@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { LocationPin, Url, Twitter, Offices } from "../../icons";
 
 
 const GitCardFooter = () => {
@@ -8,16 +9,16 @@ const GitCardFooter = () => {
   return (
     <div className="git-card-footer">
       <div className="git-card-footer__element">
-        <p className="git-card-footer__element-null">{git.location || 'location'}</p>
+        <p className="git-card-footer__element-null"><LocationPin /> {git.location || 'location'}</p>
       </div>
       <div className="git-card-footer__element">
-        <p>{git.blog || 'blog'}</p>
+        <p><Url /> {git.blog || 'blog'}</p>
       </div>
       <div className="git-card-footer__element">
-        <p>{git.twitter_username || 'twitter'}</p>
+        <p><Twitter /> {git.twitter_username || 'twitter'}</p>
       </div>
       <div className="git-card-footer__element">
-        <p>{git.company || 'company'}</p>
+        <p><Offices /> {git.company || 'company'}</p>
       </div>
     </div>
   )
