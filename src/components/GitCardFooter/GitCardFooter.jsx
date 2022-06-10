@@ -8,7 +8,7 @@ const GitCardFooter = () => {
   return (
     <div className="git-card-footer">
       <div className="git-card-footer__element">
-        <p>{git.location || 'location'}</p>
+        <p className="git-card-footer__element-null">{git.location || 'location'}</p>
       </div>
       <div className="git-card-footer__element">
         <p>{git.blog || 'blog'}</p>

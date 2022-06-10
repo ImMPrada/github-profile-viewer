@@ -1,0 +1,51 @@
+@mixin light-mode {
+  
+  h1 {
+    color: $color-light-black;
+  }
+
+  button {
+    color: $color-light-grey-blue;
+  }
+}
+
+@mixin dark-mode {
+  
+  h1 {
+    color: $color-dark-grey;
+  }
+
+  button {
+    color: $color-dark-grey;
+  }
+}
+
+#main {
+
+	.git-card-footer {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+
+		&__element {
+
+			width: 100%;
+			@include space-mono-400-regular;
+			font-size: 13px;
+			line-height: 1.5;
+
+			&-null {
+				color: red;
+			}
+		}
+	}
+  
+  .header-dark {
+    @include light-mode;
+  }
+  
+  .header-light {
+    @include dark-mode;
+  }
+}
+
