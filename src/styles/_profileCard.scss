@@ -1,16 +1,26 @@
 @mixin light-mode {
   
-  color: $color-light-grey-blue;
+  background-color: $color-dark-white;
 }
 
 @mixin dark-mode {
   
-  color: $color-dark-white;
+  background-color: $color-dark-black;
 }
 
 #main {
 
 	.profile-card {
+    padding: 32px 24px 38px 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-radius: 15px;
+
+    @include max-width-responsive;
+
+    .data-box {
+      margin: 24px 0;
+    }
 		
     &-dark {
       @include light-mode;
