@@ -14,12 +14,24 @@
   justify-content: flex-start;
   margin-bottom: 10px;
 
+  @media screen and (min-width: $br-s) {
+    width: 50%;
+  }
+
   @include space-mono-400-regular;
   font-size: 13px;
   line-height: 1.5;
 
+  @media screen and (min-width: $br-s) {
+    font-size: 15px;
+  }
+
   p {
     margin-left: 10px;
+
+    @media screen and (min-width: $br-s) {
+      margin-left: 16px;
+    }
   }
 
   &-null {
