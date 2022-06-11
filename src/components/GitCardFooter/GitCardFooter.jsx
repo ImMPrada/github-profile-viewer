@@ -5,6 +5,20 @@ import { LocationPin, Url, Twitter, Offices } from "../../icons";
 
 const GitCardFooter = () => {
   const { theme, git } = useContext(GlobalContext);
+  const getLinkData = (link) => {
+    if (!link) return { linkTo: null, label: null }
+    if (link.includes('http')) {
+      return {
+        linkTo: link,
+        label: link.slice(-1) === '/' ? link.split('/').slice(-2,-1)[0] : link.split('/').slice(-1),
+      }
+    }
+
+    return {
+      linkTo: '',
+      label: link,
+    }
+  }
 
   return (
     <div className = {`git-card-footer git-card-footer-${theme}`}>
@@ -14,7 +28,12 @@ const GitCardFooter = () => {
       </div>
       <div className={`git-card-footer__element${git.blog ? '' : '-null'}`}>
         <Url /> 
-        <p>{git.blog.slice(0,6) + '...' + git.blog.slice(-8,-1) || 'Not Available'}</p>
+        <a href = {getLinkData(git.blog).linkTo} 
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {getLinkData(git.blog).label || 'Not Available'}
+        </a>
       </div>
       <div className={`git-card-footer__element${git.twitter_username ? '' : '-null'}`}>
         <Twitter /> 
