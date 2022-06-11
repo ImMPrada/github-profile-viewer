@@ -1,10 +1,18 @@
 @mixin light-mode {
-  
   background-color: $color-dark-white;
+
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.10);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.10);
+  box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.25);
+
+  @media screen and (min-width: $br-s) {
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(20,29,47,0.10);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(20,29,47,0.10);
+    box-shadow: 0px 10px 20px 0px rgba(20,29,47,0.25);
+  }
 }
 
 @mixin dark-mode {
-  
   background-color: $color-dark-black;
 }
 

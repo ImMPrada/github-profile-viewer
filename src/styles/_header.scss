@@ -28,11 +28,12 @@
     background: none;
     display: flex;
     justify-content: space-between;
-    padding: 31px 24px 0 24px;
+    padding: 0 24px;
     margin-bottom: 36px;
 
     @include max-width-responsive;
     @media screen and (min-width: $br-s) {
+      width: 100%;
       margin-bottom: 35px;
     }
   
