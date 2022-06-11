@@ -30,10 +30,10 @@
     justify-content: space-between;
     padding: 0 24px;
     margin-bottom: 36px;
-    width: 100%;
 
     @include max-width-responsive;
     @media screen and (min-width: $br-s) {
+      width: 100%;
       margin-bottom: 35px;
     }
   
