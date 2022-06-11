@@ -1,5 +1,15 @@
 @mixin main-base {
-  min-height: 100vh;
+
+  padding-top: 24px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+  @media screen and (min-width: $br-s) {
+    padding-top: 0;
+    justify-content: center;
+  }
 }
 
 .main-theme-dark {
