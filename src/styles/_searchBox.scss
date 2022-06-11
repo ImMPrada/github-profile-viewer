@@ -24,9 +24,14 @@
     justify-content: space-between;
     border-radius: 15px;
     margin: 0 24px;
+    margin-bottom: 16px;
     padding: 6px;
+    width: 100%;
 
     @include max-width-responsive;
+    @media screen and (min-width: $br-s) {
+      margin-bottom: 24px;
+    }
 
     input {
       width: 100%;
