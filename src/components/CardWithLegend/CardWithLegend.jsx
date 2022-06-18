@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { format } from 'date-fns';
+import './styles.scss'
 
 
 const CardWithLegend = () => {

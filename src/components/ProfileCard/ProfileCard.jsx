@@ -5,6 +5,7 @@ import {
   DataBox,
   GitCardFooter,
  } from '../'
+import './styles.scss';
 
 
 const ProfileCard = () => {

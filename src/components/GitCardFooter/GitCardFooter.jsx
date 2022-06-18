@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { LocationPin, Url, Twitter, Offices } from "../../icons";
+import './styles.scss';
 
 
 const GitCardFooter = () => {
