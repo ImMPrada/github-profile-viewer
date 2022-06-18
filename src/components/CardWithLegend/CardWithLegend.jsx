@@ -4,16 +4,16 @@ import { format } from 'date-fns';
 
 
 const CardWithLegend = () => {
-  const { git, theme } = useContext(GlobalContext)
-  const dateFromDate = format(new Date(git.created_at), 'yyyy/MM/dd')
+  const { githubProfile, theme } = useContext(GlobalContext)
+  const dateFromDate = format(new Date(githubProfile.created_at), 'yyyy/MM/dd')
 
   return (
     <div className={`card-label card-label-${theme}`}>
       <div className="card-label__head">  
-        <img src={git.avatar_url} alt="" />
+        <img src={githubProfile.avatar_url} alt="" />
         <div className="card-label__head__legend">
           <div className="card-label__head__legend__info">
-            <h3>{git.name}<br/><a href={git.html_url}>@{git.login}</a></h3>
+            <h3>{githubProfile.name}<br/><a href={githubProfile.html_url}>@{githubProfile.login}</a></h3>
             <p>joined at: {dateFromDate}</p>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { LocationPin, Url, Twitter, Offices } from "../../icons";
 
 
 const GitCardFooter = () => {
-  const { theme, git } = useContext(GlobalContext);
+  const { theme, githubProfile } = useContext(GlobalContext);
   const getLinkData = (link) => {
     if (!link) return { linkTo: null, label: null }
     if (link.includes('http')) {
@@ -22,26 +22,26 @@ const GitCardFooter = () => {
 
   return (
     <div className = {`git-card-footer git-card-footer-${theme}`}>
-      <div className={`git-card-footer__element${git.location ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${githubProfile.location ? '' : '-null'}`}>
         <LocationPin /> 
-        <p>{git.location || 'Not Available'}</p>
+        <p>{githubProfile.location || 'Not Available'}</p>
       </div>
-      <div className={`git-card-footer__element${git.blog ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${githubProfile.blog ? '' : '-null'}`}>
         <Url /> 
-        <a href = {getLinkData(git.blog).linkTo} 
+        <a href = {getLinkData(githubProfile.blog).linkTo} 
           target="_blank"
           rel="noopener noreferrer"
         >
-          {getLinkData(git.blog).label || 'Not Available'}
+          {getLinkData(githubProfile.blog).label || 'Not Available'}
         </a>
       </div>
-      <div className={`git-card-footer__element${git.twitter_username ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${githubProfile.twitter_username ? '' : '-null'}`}>
         <Twitter /> 
-        <p>{git.twitter_username || 'Not Available'}</p>
+        <p>{githubProfile.twitter_username || 'Not Available'}</p>
       </div>
-      <div className={`git-card-footer__element${git.company ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${githubProfile.company ? '' : '-null'}`}>
         <Offices /> 
-        <p>{git.company || 'Not Available'}</p>
+        <p>{githubProfile.company || 'Not Available'}</p>
       </div>
     </div>
   )

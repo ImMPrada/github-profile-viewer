@@ -10,7 +10,7 @@ export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
   const [theme, setTheme] = useState(themeKeys.light);
-  const [git, setGit] = useState(gitProfile);
+  const [githubProfile, setGithubProfile] = useState(gitProfile);
 
   const changeTheme = () => {
     setTheme(themeKeys[theme])
@@ -18,7 +18,7 @@ export const GlobalProvider = ({ children }) => {
 
   const contextVal = {
     theme,
-    git,
+    githubProfile,
 
     changeTheme,
   }
