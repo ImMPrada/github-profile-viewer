@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import { Moon, Sun } from "../../icons"
+import { Moon, Sun } from "../../icons";
+import './styles.scss';
 
 
 const Header = () => {

@@ -1,3 +1,7 @@
 export { default as Header } from './Header'
 export { default as MainContainer } from './MainContainer'
 export { default as SearchBox } from './SearchBox'
+export { default as CardWithLegend } from './CardWithLegend'
+export { default as DataBox } from './DataBox'
+export { default as GitCardFooter } from './GitCardFooter'
+export { default as ProfileCard } from './ProfileCard'

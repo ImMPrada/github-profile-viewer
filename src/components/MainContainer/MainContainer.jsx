@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import './styles.scss';
 
 
 const MainContainer = ({children}) => {

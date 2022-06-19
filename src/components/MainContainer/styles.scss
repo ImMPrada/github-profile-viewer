@@ -1,0 +1,25 @@
+@import '../../styles/constants';
+
+@mixin main-base {
+
+  padding-top: 24px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+  @media screen and (min-width: $br-s) {
+    padding-top: 0;
+    justify-content: center;
+  }
+}
+
+.main-theme-dark {
+  @include main-base;
+  background-color: $color-light-grey-white;
+}
+
+.main-theme-light {
+  @include main-base;
+  background-color: $color-dark-grey-blue;
+}

@@ -1,0 +1,73 @@
+@import '../../styles/constants';
+
+@mixin light-mode {
+  background-color: $color-light-grey-white;
+
+  p:nth-child(odd) {
+    color: $color-light-grey-blue;
+  }
+  p:nth-child(even) {
+    color: $color-light-black;
+  } 
+}
+
+@mixin dark-mode {
+  background-color: $color-dark-grey-blue;
+
+  p {
+    color: $color-dark-white;
+  }
+}
+
+
+#main {
+
+  .data-box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+
+    &__info {
+
+      p {
+        text-align: center;
+
+        @media screen and (min-width: $br-s) {
+          text-align: left;
+        }
+      }
+  
+      p:nth-child(odd) {
+        @include space-mono-400-regular;
+        font-size: 11px;
+        line-height: 1.5;
+
+        @media screen and (min-width: $br-s) {
+          font-size: 13px;
+        }
+      }
+      p:nth-child(even) {
+        @include space-mono-700-bold;
+        font-size: 16px;
+        line-height: 1.5;
+        font-style: bold;
+
+        @media screen and (min-width: $br-s) {
+          font-size: 22px;
+        }
+      }
+    }
+
+  }
+
+  .data-box-dark {
+    @include light-mode;
+  }
+
+  .data-box-light {
+    @include dark-mode;
+  }
+}

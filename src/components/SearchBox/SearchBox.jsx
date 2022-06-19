@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { Search } from '../../icons'
+import './styles.scss';
  
 
 const SearchBox = () => {

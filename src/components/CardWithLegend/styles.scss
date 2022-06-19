@@ -1,0 +1,127 @@
+@import '../../styles/constants';
+
+@mixin light-mode {
+
+  span, p {
+    color: $color-light-grey;
+  }
+
+  h3 {
+    color: $color-light-black;
+  }
+
+  a {
+    color: $color-light-blue;
+  }
+}
+
+@mixin dark-mode {
+
+  h3, span, p {
+    color: $color-dark-white;
+  }
+
+  a {
+    color: $color-dark-blue;
+  }
+}
+
+
+#main {
+
+  .card-label {
+
+    display: flex;
+    background-color: transparent;
+    flex-direction: column;
+
+    &__legend {
+      margin-top: 24px;
+      font-size: 15px;
+      line-height: 1.5;
+
+      @media screen and (min-width: $br-s) {
+        margin: 0;
+        margin-left: 154px;
+        margin-top: -20px;
+      }
+    }
+
+    &__head {
+
+      display: flex;
+      flex-direction: row;
+
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+
+        @media screen and (min-width: $br-s) {
+          width: 117px;
+          height: 117px;
+        }
+      }
+  
+      &__legend {
+        width: 100%;
+        margin-left: 20px;
+
+        @media screen and (min-width: $br-s) {
+          margin-left: 37px;
+        }
+  
+        &__info {
+          display: flex;
+          flex-direction: column;
+          
+          @media screen and (min-width: $br-s) {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+  
+          h3 {
+            @include space-mono-700-bold;
+            font-size: 16px;
+            line-height: 1.5;
+
+            @media screen and (min-width: $br-s) {
+              font-size: 26px;
+            }
+  
+            a {
+              font-size: 13px;
+              line-height: 1.5;
+
+              @media screen and (min-width: $br-s) {
+                font-size: 16px;
+                margin-top: 2px;
+              }
+            }
+          }
+  
+          p {
+            @include space-mono-400-regular;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-top: 6px;
+
+            @media screen and (min-width: $br-s) {
+              margin: 0;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .card-label-dark {
+    @include light-mode;
+  }
+
+  .card-label-light {
+    @include dark-mode;
+  }
+}
