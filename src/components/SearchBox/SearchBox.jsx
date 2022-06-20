@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import { Search } from '../../icons'
+import useGitHub from '../../hooks/useGitHub';
+import { Search } from '../../icons';
 import './styles.scss';
  
 
 const SearchBox = () => {
   const { theme } = useContext(GlobalContext);
+  const { getProfile } = useGitHub();
   const inputValue = { search: '' };
 
   return (
@@ -16,7 +18,7 @@ const SearchBox = () => {
         onChange = {(e) => inputValue.search = e.target.value}
         placeholder = "Search GitHub username…"
       />
-      <button onClick = {() => console.log(inputValue.search)}>Search</button>
+      <button onClick = {() => getProfile(inputValue.search)}>Search</button>
     </div>
   )
 }

@@ -3,9 +3,10 @@ import {
   MainContainer, 
   Header, 
   SearchBox, 
-  ProfileCard,
+  DataToShow,
 } from './components'
 import { GlobalProvider } from './contexts/GlobalContext';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
         <MainContainer>
           <Header />
           <SearchBox />
-          <ProfileCard />
+          <DataToShow />
+          {/* <Loader /> */}
+          {/* <ProfileCard /> */}
         </MainContainer>
       </GlobalProvider>
     </div>
