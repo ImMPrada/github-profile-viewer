@@ -4,6 +4,7 @@ import {
   Header, 
   SearchBox, 
   ProfileCard,
+  ErrorMessage,
 } from './components'
 import { GlobalProvider } from './contexts/GlobalContext';
 
@@ -14,6 +15,7 @@ const App = () => {
         <MainContainer>
           <Header />
           <SearchBox />
+          <ErrorMessage />
           <ProfileCard />
         </MainContainer>
       </GlobalProvider>
