@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { useEffect } from 'react';
 import gitProfile from './githubImmprada.json';
 
 const themeKeys = {
@@ -10,12 +11,18 @@ export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
   const [theme, setTheme] = useState(themeKeys.light);
-  const [githubProfile, setGithubProfile] = useState(gitProfile);
-  const [loading, setLoading] = useState(false);
+  const [githubProfile, setGithubProfile] = useState(null);
+  const [loading, setLoading] = useState(null);
 
   const changeTheme = () => {
     setTheme(themeKeys[theme])
   }
+
+  useEffect(() => {
+    if (!githubProfile) return
+
+    setLoading(false)
+  }, [githubProfile])
 
   const contextVal = {
     theme,
