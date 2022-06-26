@@ -28,6 +28,23 @@ export const GlobalProvider = ({ children }) => {
     setTheme(themeKeys[theme])
   }
 
+  const reinitState = () => {
+    dispatch({
+      type: 'REINITIALICE',
+      payload: initialState
+    })
+  }
+
+  const updateSearchValue = (tipedValue) => {
+    dispatch({
+      type: 'WRITE_PROFILE_TO_SEARCH',
+      payload: tipedValue
+    })
+  }
+
+
+  const startSearch = () => {}
+
   useEffect(() => {
     if (!githubProfile) return
 
@@ -42,6 +59,11 @@ export const GlobalProvider = ({ children }) => {
     changeTheme,
     setLoading,
     setGithubProfile,
+
+    state,
+    reinitState,
+    updateSearchValue,
+    startSearch,
   }
 
   return (
