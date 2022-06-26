@@ -5,7 +5,7 @@ import './styles.scss';
 
 
 const GitCardFooter = () => {
-  const { theme, githubProfile } = useContext(GlobalContext);
+  const { theme, state } = useContext(GlobalContext);
   const getLinkData = (link) => {
     if (!link) return { linkTo: null, label: null }
     if (link.includes('http')) {
@@ -23,26 +23,26 @@ const GitCardFooter = () => {
 
   return (
     <div className = {`git-card-footer git-card-footer-${theme}`}>
-      <div className={`git-card-footer__element${githubProfile.location ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${state.profile.location ? '' : '-null'}`}>
         <LocationPin /> 
-        <p>{githubProfile.location || 'Not Available'}</p>
+        <p>{state.profile.location || 'Not Available'}</p>
       </div>
-      <div className={`git-card-footer__element${githubProfile.blog ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${state.profile.blog ? '' : '-null'}`}>
         <Url /> 
-        <a href = {getLinkData(githubProfile.blog).linkTo} 
+        <a href = {getLinkData(state.profile.blog).linkTo} 
           target="_blank"
           rel="noopener noreferrer"
         >
-          {getLinkData(githubProfile.blog).label || 'Not Available'}
+          {getLinkData(state.profile.blog).label || 'Not Available'}
         </a>
       </div>
-      <div className={`git-card-footer__element${githubProfile.twitter_username ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${state.profile.twitter_username ? '' : '-null'}`}>
         <Twitter /> 
-        <p>{githubProfile.twitter_username || 'Not Available'}</p>
+        <p>{state.profile.twitter_username || 'Not Available'}</p>
       </div>
-      <div className={`git-card-footer__element${githubProfile.company ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${state.profile.company ? '' : '-null'}`}>
         <Offices /> 
-        <p>{githubProfile.company || 'Not Available'}</p>
+        <p>{state.profile.company || 'Not Available'}</p>
       </div>
     </div>
   )

@@ -5,16 +5,16 @@ import './styles.scss'
 
 
 const CardWithLegend = () => {
-  const { githubProfile, theme } = useContext(GlobalContext)
-  const dateFromDate = format(new Date(githubProfile.created_at), 'yyyy/MM/dd')
+  const { state, theme } = useContext(GlobalContext)
+  const dateFromDate = format(new Date(state.profile.created_at), 'yyyy/MM/dd')
 
   return (
     <div className={`card-label card-label-${theme}`}>
       <div className="card-label__head">  
-        <img src={githubProfile.avatar_url} alt="" />
+        <img src={state.profile.avatar_url} alt="" />
         <div className="card-label__head__legend">
           <div className="card-label__head__legend__info">
-            <h3>{githubProfile.name}<br/><a href={githubProfile.html_url}>@{githubProfile.login}</a></h3>
+            <h3>{state.profile.name}<br/><a href={state.profile.html_url}>@{state.profile.login}</a></h3>
             <p>joined at: {dateFromDate}</p>
           </div>
         </div>

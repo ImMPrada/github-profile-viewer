@@ -23,7 +23,7 @@ const useGitHub = (gists, setGists) => {
       .then(res => {
         dispatch({
           type: 'RESULT_IS_PROFILE',
-          payload: res,
+          payload: res.data,
         })    
       })
       .catch(err => {

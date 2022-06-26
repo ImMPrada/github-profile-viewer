@@ -4,10 +4,11 @@ import { Loader, ProfileCard } from '../';
 
 
 const DataToShow = () => {
-  const { loading } = useContext(GlobalContext);
+  const { state } = useContext(GlobalContext);
 
   
-  return loading === false ? <ProfileCard /> : <Loader />  
+  if(state.loading) return <Loader />
+  if(state.profile) return <ProfileCard />
 }
 
 export default DataToShow;

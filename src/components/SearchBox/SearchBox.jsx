@@ -26,7 +26,7 @@ const SearchBox = () => {
         onFocus = {() => reinitState()}
         placeholder = "Search GitHub username…"
       />
-      <button onClick = {() => getProfile(inputValue.search)}>Search</button>
+      <button onClick = {() => getProfile()}>Search</button>
     </div>
   )
 }
