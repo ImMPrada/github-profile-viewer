@@ -2,6 +2,7 @@ import React, { useEffect, createContext, useState, useReducer } from 'react';
 import { reducer } from './reducer';
 import gitProfile from './githubImmprada.json';
 
+
 const themeKeys = {
   dark: 'light',
   light: 'dark',
@@ -14,6 +15,7 @@ const initialState = {
   profile: null,
 }
 
+
 export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
@@ -23,6 +25,7 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {console.log(state)}, [state])
+
 
   const changeTheme = () => {
     setTheme(themeKeys[theme])
@@ -43,8 +46,6 @@ export const GlobalProvider = ({ children }) => {
   }
 
 
-  const startSearch = () => {}
-
   useEffect(() => {
     if (!githubProfile) return
 
@@ -61,9 +62,9 @@ export const GlobalProvider = ({ children }) => {
     setGithubProfile,
 
     state,
+    dispatch,
     reinitState,
     updateSearchValue,
-    startSearch,
   }
 
   return (
