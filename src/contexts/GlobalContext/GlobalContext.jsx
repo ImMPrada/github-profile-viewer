@@ -21,7 +21,6 @@ export const GlobalContext = createContext(null);
 export const GlobalProvider = ({ children }) => {
   const [theme, setTheme] = useState(themeKeys.light);
   const [githubProfile, setGithubProfile] = useState(null);
-  const [loading, setLoading] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {console.log(state)}, [state])
@@ -45,20 +44,11 @@ export const GlobalProvider = ({ children }) => {
     })
   }
 
-
-  useEffect(() => {
-    if (!githubProfile) return
-
-    setLoading(false)
-  }, [githubProfile])
-
   const contextVal = {
     theme,
     githubProfile,
-    loading,
 
     changeTheme,
-    setLoading,
     setGithubProfile,
 
     state,
