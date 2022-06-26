@@ -3,6 +3,8 @@ import {
   MainContainer, 
   Header, 
   SearchBox, 
+  ProfileCard,
+  ErrorMessage,
   DataToShow,
 } from './components'
 import { GlobalProvider } from './contexts/GlobalContext';
@@ -15,6 +17,7 @@ const App = () => {
         <MainContainer>
           <Header />
           <SearchBox />
+          <ErrorMessage />
           <DataToShow />
           {/* <Loader /> */}
           {/* <ProfileCard /> */}
