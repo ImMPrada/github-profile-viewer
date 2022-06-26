@@ -1,12 +1,25 @@
-export const actionTypes = {
-  writeProfileToSearch: 'WRITE_PROFILE_TO_SEARCH',
-  searching: 'SEARCHING',
-  resultError: 'RESULT_IS_ERROR',
-  successResult: 'RESULT_IS_PROFILE',
-}
+const reduceObject = (state, payload = null) => ({
+  'WRITE_PROFILE_TO_SEARCH': {
+    ...state,
+    profileToSearch: payload
+  },
+  'SEARCHING': {
+    ...state,
+    loading: true
+  },
+  'RESULT_IS_ERROR': {
+    ...state,
+    loading: false,
+    error: true,
+    profile: null,
+  },
+  'RESULT_IS_PROFILE': {
+    ...state,
+    loading: false,
+    error: false,
+    profile: payload,
+  }
+})
 
-const reduceObject = (state) => {
 
-}
-
-export const reducer = (state, action) => (reduceObject(state)[action.type] || state);
+export const reducer = (state, action) => (reduceObject(state, action.payload)[action.type] || state);
