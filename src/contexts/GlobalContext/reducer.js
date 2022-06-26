@@ -1,4 +1,8 @@
 const reduceObject = (state, payload = null) => ({
+  'REINITIALICE': {
+    ...state,
+    payload
+  },
   'WRITE_PROFILE_TO_SEARCH': {
     ...state,
     profileToSearch: payload
