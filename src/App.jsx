@@ -1,10 +1,8 @@
 import React from 'react';
 import { 
   MainContainer, 
-  Header, 
-  SearchBox, 
-  ProfileCard,
-  ErrorMessage,
+  Header,
+  SearchBox,
   DataToShow,
 } from './components'
 import { GlobalProvider } from './contexts/GlobalContext';
@@ -17,10 +15,7 @@ const App = () => {
         <MainContainer>
           <Header />
           <SearchBox />
-          <ErrorMessage />
           <DataToShow />
-          {/* <Loader /> */}
-          {/* <ProfileCard /> */}
         </MainContainer>
       </GlobalProvider>
     </div>
