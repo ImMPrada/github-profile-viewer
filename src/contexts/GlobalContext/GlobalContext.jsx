@@ -1,37 +1,51 @@
-import React, { createContext, useState } from 'react';
-import { useEffect } from 'react';
-import gitProfile from './githubImmprada.json';
+import React, { useEffect, createContext, useState, useReducer } from 'react';
+import { reducer } from './reducer';
 
 const themeKeys = {
   dark: 'light',
   light: 'dark',
 }
 
+const initialState = {
+  profileToSearch: '',
+  error: 'false',
+  loading: false,
+  profile: null,
+}
+
+
 export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
   const [theme, setTheme] = useState(themeKeys.light);
-  const [githubProfile, setGithubProfile] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [state, dispatch] = useReducer(reducer, initialState)
+
 
   const changeTheme = () => {
     setTheme(themeKeys[theme])
   }
 
-  useEffect(() => {
-    if (!githubProfile) return
+  const reinitState = () => {
+    dispatch({
+      type: 'REINITIALICE',
+    })
+  }
 
-    setLoading(false)
-  }, [githubProfile])
+  const updateSearchValue = (tipedValue) => {
+    dispatch({
+      type: 'WRITE_PROFILE_TO_SEARCH',
+      payload: tipedValue
+    })
+  }
 
   const contextVal = {
     theme,
-    githubProfile,
-    loading,
+    state,
 
     changeTheme,
-    setLoading,
-    setGithubProfile,
+    dispatch,
+    reinitState,
+    updateSearchValue,
   }
 
   return (

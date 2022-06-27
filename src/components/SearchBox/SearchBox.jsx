@@ -6,7 +6,13 @@ import './styles.scss';
  
 
 const SearchBox = () => {
-  const { theme } = useContext(GlobalContext);
+  const { 
+    theme,
+    state,
+    reinitState,
+    updateSearchValue,
+    startSearch,
+  } = useContext(GlobalContext);
   const { getProfile } = useGitHub();
   const inputValue = { search: '' };
 
@@ -15,10 +21,12 @@ const SearchBox = () => {
       <Search />
       <input 
         type = "text"
-        onChange = {(e) => inputValue.search = e.target.value}
+        value = {state.profileToSearch}
+        onChange = {(e) => updateSearchValue(e.target.value)}
+        onFocus = {() => reinitState()}
         placeholder = "Search GitHub username…"
       />
-      <button onClick = {() => getProfile(inputValue.search)}>Search</button>
+      <button onClick = {() => getProfile()}>Search</button>
     </div>
   )
 }

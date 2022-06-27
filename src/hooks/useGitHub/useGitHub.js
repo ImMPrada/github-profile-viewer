@@ -1,7 +1,5 @@
 import {
   useContext,
-  useState,
-  useEffect
 } from "react";
 import { GlobalContext } from '../../contexts/GlobalContext'
 import axios from 'axios';
@@ -11,22 +9,27 @@ const baseURL = 'https://api.github.com/users/'
 
 const useGitHub = (gists, setGists) => {
   const {
-    setLoading,
-    setGithubProfile,
+    state,
+    dispatch,
   } = useContext(GlobalContext)
 
-  const getProfile = (profileName) => {
-    setLoading(true)
+  const getProfile = () => {
+    dispatch({
+      type: 'SEARCHING'
+    })
 
+    const profileName = state.profileToSearch
     axios.get(`${baseURL}${profileName}`)
       .then(res => {
-
-        setGithubProfile(res.data)
+        dispatch({
+          type: 'RESULT_IS_PROFILE',
+          payload: res.data,
+        })    
       })
       .catch(err => {
-
-        setGithubProfile('NotFoundError')
-        setLoading(false)
+        dispatch({
+          type: 'RESULT_IS_ERROR'
+        })    
       })
   }
 
