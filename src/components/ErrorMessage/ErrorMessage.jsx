@@ -1,10 +1,5 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import { 
-  CardWithLegend,
-  DataBox,
-  GitCardFooter,
- } from '..'
 import './styles.scss';
 
 

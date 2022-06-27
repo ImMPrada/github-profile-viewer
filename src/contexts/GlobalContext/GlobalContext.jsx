@@ -1,7 +1,5 @@
 import React, { useEffect, createContext, useState, useReducer } from 'react';
 import { reducer } from './reducer';
-import gitProfile from './githubImmprada.json';
-
 
 const themeKeys = {
   dark: 'light',
@@ -20,10 +18,7 @@ export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
   const [theme, setTheme] = useState(themeKeys.light);
-  const [githubProfile, setGithubProfile] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState)
-
-  useEffect(() => {console.log(state)}, [state])
 
 
   const changeTheme = () => {
@@ -46,12 +41,9 @@ export const GlobalProvider = ({ children }) => {
 
   const contextVal = {
     theme,
-    githubProfile,
+    state,
 
     changeTheme,
-    setGithubProfile,
-
-    state,
     dispatch,
     reinitState,
     updateSearchValue,
