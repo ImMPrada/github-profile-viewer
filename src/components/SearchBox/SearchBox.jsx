@@ -11,7 +11,7 @@ const SearchBox = () => {
     state,
     reinitState,
     updateSearchValue,
-    startSearch,
+    clearResult,
   } = useContext(GlobalContext);
   const { getProfile } = useGitHub();
   const inputValue = { search: '' };
@@ -24,6 +24,7 @@ const SearchBox = () => {
         value = {state.profileToSearch}
         onChange = {(e) => updateSearchValue(e.target.value)}
         onFocus = {() => reinitState()}
+        onBlur = {() => clearResult()}
         placeholder = "Search GitHub username…"
       />
       <button onClick = {() => getProfile()}>Search</button>

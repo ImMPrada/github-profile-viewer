@@ -1,7 +1,13 @@
 const reduceObject = (state, payload = null) => ({
   'REINITIALICE': {
     ...state,
+    profileToSearch: '',
+  },
+  'CLEAR_RESULT': {
+    ...state,
+    loading: false,
     error: false,
+    profile: null,
     profileToSearch: '',
   },
   'WRITE_PROFILE_TO_SEARCH': {

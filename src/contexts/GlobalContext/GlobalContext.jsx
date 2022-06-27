@@ -38,6 +38,14 @@ export const GlobalProvider = ({ children }) => {
     })
   }
 
+  const clearResult = () => {
+    if(state.profileToSearch === ''){
+      dispatch({
+        type: 'CLEAR_RESULT'
+      })
+    }
+  }
+
   const contextVal = {
     theme,
     state,
@@ -46,6 +54,7 @@ export const GlobalProvider = ({ children }) => {
     dispatch,
     reinitState,
     updateSearchValue,
+    clearResult,
   }
 
   return (
