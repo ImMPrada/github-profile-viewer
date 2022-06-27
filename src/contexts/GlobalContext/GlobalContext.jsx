@@ -28,7 +28,6 @@ export const GlobalProvider = ({ children }) => {
   const reinitState = () => {
     dispatch({
       type: 'REINITIALICE',
-      payload: initialState
     })
   }
 
