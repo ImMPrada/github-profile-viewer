@@ -7,6 +7,7 @@ const themeKeys = {
 }
 
 const initialState = {
+  firstRun: true,
   oldProfileToSearch: '',
   profileToSearch: '',
   error: 'false',
@@ -40,14 +41,22 @@ export const GlobalProvider = ({ children }) => {
   }
 
   const clearResult = () => {
-    if(state.profile && state.profileToSearch === '') {
-      return dispatch({
-        type: 'ROLLBACK_PROFILE_TO_SEARCH'
-      })
+    if(state.firstRun) return
+    if(state.profile) {
+      if(state.profileToSearch === '') {
+        return dispatch({
+          type: 'ROLLBACK_PROFILE_TO_SEARCH'
+        })
+      }
+      if(state.profileToSearch != state.oldProfileToSearch) {
+        return dispatch({
+          type: 'CLEAR_PROFILE_RESULT'
+        })
+      }
     }
     if(state.error){
       return dispatch({
-        type: 'CLEAR_RESULT'
+        type: 'CLEAR_ERROR_RESULT'
       })
     }
   }
