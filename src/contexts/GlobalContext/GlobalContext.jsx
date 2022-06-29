@@ -7,6 +7,7 @@ const themeKeys = {
 }
 
 const initialState = {
+  oldProfileToSearch: '',
   profileToSearch: '',
   error: 'false',
   loading: false,
@@ -39,8 +40,13 @@ export const GlobalProvider = ({ children }) => {
   }
 
   const clearResult = () => {
-    if(state.profileToSearch === ''){
-      dispatch({
+    if(state.profile && state.profileToSearch === '') {
+      return dispatch({
+        type: 'ROLLBACK_PROFILE_TO_SEARCH'
+      })
+    }
+    if(state.error){
+      return dispatch({
         type: 'CLEAR_RESULT'
       })
     }

@@ -7,8 +7,13 @@ const reduceObject = (state, payload = null) => ({
     ...state,
     loading: false,
     error: false,
-    profile: null,
     profileToSearch: '',
+  },
+  'ROLLBACK_PROFILE_TO_SEARCH': {
+    ...state,
+    loading: false,
+    error: false,
+    profileToSearch: state.oldProfileToSearch,
   },
   'WRITE_PROFILE_TO_SEARCH': {
     ...state,
@@ -23,12 +28,14 @@ const reduceObject = (state, payload = null) => ({
     loading: false,
     error: true,
     profile: null,
+    oldProfileToSearch: state.profileToSearch,
   },
   'RESULT_IS_PROFILE': {
     ...state,
     loading: false,
     error: false,
     profile: payload,
+    oldProfileToSearch: state.profileToSearch,
   }
 })
 
