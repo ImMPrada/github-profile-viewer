@@ -18,7 +18,7 @@ Yo can try [a live demo here](https://github-profile-viewer-two.vercel.app/)
 
 
 #### It's responsive!
-![image](https://user-images.githubusercontent.com/26731448/176810753-163c381a-aa5a-41ea-b57d-cc40bad8503a.png)
+<img width="407" alt="image" src="https://user-images.githubusercontent.com/26731448/176884211-ca77ad9c-b52b-4ddc-9ac2-dc185c240a1c.png">
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
