@@ -12,7 +12,7 @@ clone this repository:
 
 move to the project foldet:
 
-`cd github-profile-searcher`
+`cd github-profile-viewer`
 
 install dependencies:
 
