@@ -38,5 +38,28 @@ now, you can run the app in the development mode:
 
 `npm run start`
 
+## Author
+Miguel Prada
+
+- GitHub: @mapra99
+- LinkedIn: /in/mapra99/
+- Contributing
+- Contributions, issues, and feature requests are welcome!
+
+Feel free to check the issues page.
+
+Show your support
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+-  Hat tip to [frontendmentor](https://www.frontendmentor.io/) for their design and challenge
+
+-  Miguel Prada
+
+  - GitHub: @ImMPrada
+  - LinkedIn: /in/immprada/
+  - Contributing
+  - Contributions, issues, and feature requests are welcome!
+
 
 
