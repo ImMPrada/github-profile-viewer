@@ -10,7 +10,7 @@ clone this repository:
 
 `git clone git@github.com:ImMPrada/github-profile-viewer.git`
 
-move to the project foldet:
+move to the project folder:
 
 `cd github-profile-viewer`
 
