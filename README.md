@@ -8,7 +8,7 @@ And consume data from [github API REST](https://docs.github.com/es/rest)
 
 clone this repository:
 
-`npm start`
+`git clone git@github.com:ImMPrada/github-profile-viewer.git`
 
 move to the project foldet:
 
