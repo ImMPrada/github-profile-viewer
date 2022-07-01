@@ -1,1 +1,0 @@
-# git-profile-searcher
