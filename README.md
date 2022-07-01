@@ -54,11 +54,11 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 -  Hat tip to [frontendmentor](https://www.frontendmentor.io/) for their design and challenge
 
--  Miguel Prada
-  -GitHub: @ImMPrada
-  -LinkedIn: /in/immprada/
-  -Contributing
-  -Contributions, issues, and feature requests are welcome!
+- Miguel Prada
+  - GitHub: @ImMPrada
+  - LinkedIn: /in/immprada/
+  - Contributing
+  - Contributions, issues, and feature requests are welcome!
 
 
 
