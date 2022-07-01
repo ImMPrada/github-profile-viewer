@@ -4,14 +4,18 @@ This project, build with React.js enables you to search and take a look into a G
 
 Yo can try [a live demo here](https://github-profile-viewer-two.vercel.app/)
 
+
 #### light mode:
 ![image](https://user-images.githubusercontent.com/26731448/176810497-04af4aa7-20f3-4875-a0aa-84f25eaf252c.png)
+
 
 #### dark mode:
 ![image](https://user-images.githubusercontent.com/26731448/176810578-a4532382-dc41-4424-ab83-daae16095d07.png)
 
+
 #### search result for [immprada](https://github.com/ImMPrada):
 ![image](https://user-images.githubusercontent.com/26731448/176810691-ef0fb895-97e0-4e1b-8b50-7e04b14f4e40.png)
+
 
 #### It's responsive!
 ![image](https://user-images.githubusercontent.com/26731448/176810753-163c381a-aa5a-41ea-b57d-cc40bad8503a.png)
