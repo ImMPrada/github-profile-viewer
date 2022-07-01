@@ -41,8 +41,8 @@ now, you can run the app in the development mode:
 ## Author
 Miguel Prada
 
-- GitHub: @mapra99
-- LinkedIn: /in/mapra99/
+- GitHub: @ImMPrada
+- LinkedIn: /in/immprada/
 - Contributing
 - Contributions, issues, and feature requests are welcome!
 
@@ -55,10 +55,8 @@ Give a ⭐️ if you like this project!
 -  Hat tip to [frontendmentor](https://www.frontendmentor.io/) for their design and challenge
 
 - Miguel Prada
-  - GitHub: @ImMPrada
-  - LinkedIn: /in/immprada/
-  - Contributing
-  - Contributions, issues, and feature requests are welcome!
+  - GitHub: @mapra99
+  - LinkedIn: /in/mapra99/
 
 
 
