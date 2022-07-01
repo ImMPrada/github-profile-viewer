@@ -2,6 +2,8 @@
 
 This project, build with React.js enables you to search and take a look into a Github profile. Showing you some information about the profile, and let you goto to github's page profile if you want:
 
+Yo can try [a live demo here](https://github-profile-viewer-two.vercel.app/)
+
 #### light mode:
 ![image](https://user-images.githubusercontent.com/26731448/176810497-04af4aa7-20f3-4875-a0aa-84f25eaf252c.png)
 
