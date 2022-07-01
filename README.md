@@ -55,11 +55,10 @@ Give a ⭐️ if you like this project!
 -  Hat tip to [frontendmentor](https://www.frontendmentor.io/) for their design and challenge
 
 -  Miguel Prada
-
-  - GitHub: @ImMPrada
-  - LinkedIn: /in/immprada/
-  - Contributing
-  - Contributions, issues, and feature requests are welcome!
+  -GitHub: @ImMPrada
+  -LinkedIn: /in/immprada/
+  -Contributing
+  -Contributions, issues, and feature requests are welcome!
 
 
 
