@@ -61,6 +61,8 @@ Give a ⭐️ if you like this project!
 - Miguel Prada
   - GitHub: @mapra99
   - LinkedIn: /in/mapra99/
+  
+ <a target="_blank" href="https://icons8.com/icon/R77nMDo1UNz4/ruby-programming-language">Ruby Programming Language</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 
 
