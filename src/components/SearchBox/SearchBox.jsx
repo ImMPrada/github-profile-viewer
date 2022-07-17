@@ -14,7 +14,6 @@ const SearchBox = () => {
     clearResult,
   } = useContext(GlobalContext);
   const { getProfile } = useGitHub();
-  const inputValue = { search: '' };
 
   return (
     <div className = {`searchbox searchbox-${theme}`}>
