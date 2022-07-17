@@ -13,6 +13,7 @@ const initialState = {
   error: 'false',
   loading: false,
   profile: null,
+  repos: null,
 }
 
 
@@ -22,6 +23,7 @@ export const GlobalProvider = ({ children }) => {
   const [theme, setTheme] = useState(themeKeys.light);
   const [state, dispatch] = useReducer(reducer, initialState)
 
+  useEffect(() => {console.log(state)}, [state])
 
   const changeTheme = () => {
     setTheme(themeKeys[theme])

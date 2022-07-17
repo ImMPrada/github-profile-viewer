@@ -7,7 +7,7 @@ import axios from 'axios';
 const baseURL = 'https://api.github.com/users/'
 
 
-const useGitHub = (gists, setGists) => {
+const useGitHub = () => {
   const {
     state,
     dispatch,
@@ -24,7 +24,20 @@ const useGitHub = (gists, setGists) => {
         dispatch({
           type: 'RESULT_IS_PROFILE',
           payload: res.data,
-        })    
+        })
+        axios.get(`${baseURL}${profileName}/repos`)
+          .then(res => {
+            dispatch({
+              type: 'RESULT_OF_REPOS',
+              payload: res.data,
+            })
+                
+          })
+          .catch(err => {
+            dispatch({
+              type: 'REPOS_ERROR'
+            })    
+          })
       })
       .catch(err => {
         dispatch({
