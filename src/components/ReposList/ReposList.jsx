@@ -7,10 +7,17 @@ const ReposList = () => {
   const [hidden, setHidden] = useState(true);
   const { state, theme } = useContext(GlobalContext);
 
+  const repos = (
+    state.repos.map(repo => {
+      return <h3>{repo.name}</h3>
+    })
+  )
+
   return (
     <div className = {`repos-list repos-list-${theme}`}>
       <div className={`repos-list__content repos-list--hiden__${hidden}`}>
         Here will be displayed the list of repos
+        {repos}
       </div>
       { state.repos.length > 0 && 
         <button className="repos-list__button" onClick={() => setHidden(!hidden)}>
