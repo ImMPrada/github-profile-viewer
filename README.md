@@ -57,7 +57,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 -  Hat tip to [frontendmentor](https://www.frontendmentor.io/) for their design and challenge
--  Languages icons by [Icons8]("https://icons8.com")
+-  Languages icons by [Icons8](https://icons8.com")
 - Miguel Prada
   - GitHub: @mapra99
   - LinkedIn: /in/mapra99/
