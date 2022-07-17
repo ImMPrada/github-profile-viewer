@@ -13,6 +13,27 @@ const useGitHub = () => {
     dispatch,
   } = useContext(GlobalContext)
 
+  const curateRepos = (repos) => {
+
+    const reposArr = repos.map(async repo => {
+      const contributorsArr = await axios.get(repo.contributors_url)
+      const languages = await axios.get(repo.languages_url)
+
+      return {
+        name: repo.name,
+        description: repo.description,
+        liveDemo: repo.homepage,
+        url: repo.html_url,
+        createdAt: repo.created_at,
+        updatedAt: repo.updated_at,
+        contributors: contributorsArr,
+        languages: languages,
+      }
+  })
+
+    return reposArr
+  }
+
   const getProfile = () => {
     dispatch({
       type: 'SEARCHING'
@@ -29,7 +50,7 @@ const useGitHub = () => {
           .then(res => {
             dispatch({
               type: 'RESULT_OF_REPOS',
-              payload: res.data,
+              payload: curateRepos(res.data)
             })
                 
           })
