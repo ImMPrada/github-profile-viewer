@@ -3,19 +3,37 @@
 @mixin light-mode {
   background-color: $color-dark-white;
 
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.10);
-  -moz-box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.10);
-  box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.25);
+  .repos-list__content {
+    background-color: $color-light-grey-white;
+    color: $color-dark-black;
+  }
 
-  @media screen and (min-width: $br-s) {
-    -webkit-box-shadow: 0px 10px 20px 0px rgba(20,29,47,0.10);
-    -moz-box-shadow: 0px 10px 20px 0px rgba(20,29,47,0.10);
-    box-shadow: 0px 10px 20px 0px rgba(20,29,47,0.25);
+  button {
+    background-color: $color-light-grey-white;
+    color: $color-dark-black;
+
+    &:hover {
+      opacity: 80%;
+    }
   }
 }
 
 @mixin dark-mode {
   background-color: $color-dark-black;
+
+  .repos-list__content {
+    background-color: $color-dark-grey-blue;
+    color: $color-dark-white;
+  }
+
+  button {
+    background-color: $color-dark-grey-blue;
+    color: $color-dark-white;
+
+    &:hover {
+      opacity: 80%;
+    }
+  }
 }
 
 #main {
@@ -36,26 +54,26 @@
 
     &__content {
       margin-top: 30px;
-      width: 100%;
       height: 500px;
       border-radius: 10px;
       padding: 10px;
-      background-color: red;
     }
 
     button {
-      border: none;
-      background-color: transparent;
-      margin-top: 30px;
       cursor: pointer;
+      border: none;
+      margin-top: 30px;
       padding: 10px;
-
-      &:hover {
-        background-color: red;
-        opacity: 100%;
-      }
+      border-radius: 5px;
+      @include space-mono-400-regular()
     }
 
+    &-dark {
+      @include light-mode;
+    }
+    
+    &-light {
+      @include dark-mode;
+    }
 	}
-  
 }

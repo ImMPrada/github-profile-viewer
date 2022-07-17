@@ -15,10 +15,10 @@ const ReposList = () => {
   return (
     <div className = {`repos-list repos-list-${theme}`}>
       <div className={`repos-list__content repos-list--hiden__${hidden}`}>
-          hello world!
+        Here will be displayed the list of repos
       </div>
       <button className="repos-list__button" onClick={() => setHidden(!hidden)}>
-        show/Hide
+        {hidden ? 'Show list of repos' : 'Hide list of repos'}
       </button>
     </div>
   )
