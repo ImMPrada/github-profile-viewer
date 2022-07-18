@@ -2,12 +2,9 @@
 
 @mixin light-mode {
   background-color: $color-dark-white;
-
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.10);
-  -moz-box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.10);
   box-shadow: 0px 5px 10px 0px rgba(20,29,47,0.25);
 
-  input {
+  form > input {
     color: $color-light-grey-blue;
     background-color: $color-dark-white;
   }
@@ -16,7 +13,7 @@
 @mixin dark-mode {
   background-color: $color-dark-black;
 
-  input {
+  form > input {
     color: $color-dark-white;
     background-color: $color-dark-black;
   }
@@ -43,39 +40,45 @@
       padding-left: 32px;
     }
 
-    input {
+    form {
       width: 100%;
-      padding: 12px 16px;
-      margin-right: 8px;
-      border: 0;
-      border-radius: 7px;
+      display: flex;
 
-      @include space-mono-400-regular;
-      color: $color-dark-white;
-      font-size: 14px;
-      line-height: 1.5;
-      text-align: left;      
-    }
-
+      input {
+        width: 100%;
+        padding: 12px 16px;
+        margin-right: 8px;
+        border: 0;
+        border-radius: 7px;
   
-    button {
-      @include space-mono-700-bold;
-      color: $color-dark-white;
-      font-size: 14px;
-      line-height: 1.5;
-      text-align: center;
-      
-      background-color: $color-dark-blue;
-      padding: 12px 16px;
-      border: 0;
-      border-radius: 10px;
-      outline: none;
-      cursor: pointer;
-
-      svg {
-        margin-left: 10px;
+        @include space-mono-400-regular;
+        color: $color-dark-white;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: left;      
+      }
+  
+    
+      button {
+        @include space-mono-700-bold;
+        color: $color-dark-white;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: center;
+        
+        background-color: $color-dark-blue;
+        padding: 12px 16px;
+        border: 0;
+        border-radius: 10px;
+        outline: none;
+        cursor: pointer;
+  
+        svg {
+          margin-left: 10px;
+        }
       }
     }
+
   
   }
   
