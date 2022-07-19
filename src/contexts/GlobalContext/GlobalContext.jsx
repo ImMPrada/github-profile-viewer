@@ -19,12 +19,23 @@ const initialState = {
 export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
-  const [theme, setTheme] = useState(themeKeys.light);
+  const [theme, setTheme] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState)
+
+  useEffect(() => {
+    const cookieTheme = getCookie('devFinder')
+    if(!cookieTheme) {
+      setTheme(themeKeys.light)
+      createCookie('devFinder', themeKeys.light, 5)
+    } else {
+      setTheme(cookieTheme)
+    }
+  }, [])
 
 
   const changeTheme = () => {
     setTheme(themeKeys[theme])
+    createCookie('devFinder', themeKeys[theme], 5)
   }
 
   const reinitState = () => {
@@ -59,6 +70,22 @@ export const GlobalProvider = ({ children }) => {
         type: 'CLEAR_ERROR_RESULT'
       })
     }
+  }
+
+  const createCookie = (cookieName, cookieValue, expirationDays) => {
+    const today = new Date()
+    const expirationDate = new Date(today.getTime() + (expirationDays*24*60*60*1000))
+    const expires = "expires="+ expirationDate.toUTCString()
+
+    document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+  }
+
+  const getCookie = (cookieName) => {
+    const value = `; ${document.cookie}`;
+    const theme = value.split(`; ${cookieName}=`);
+ 
+    if (theme.length === 2) return theme.pop()
+    return null
   }
 
   const contextVal = {
