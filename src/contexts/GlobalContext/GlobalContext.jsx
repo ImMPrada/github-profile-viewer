@@ -13,7 +13,7 @@ const initialState = {
   error: 'false',
   loading: false,
   profile: null,
-  repos: null,
+  repos: [],
 }
 
 

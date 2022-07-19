@@ -49,6 +49,12 @@ const reduceObject = (state, payload = null) => ({
     error: false,
     repos: payload,
   },
+  'ADD_REPO': {
+    ...state,
+    loading: false,
+    error: false,
+    repos: state.repos.push(payload),
+  },
   'REPOS_ERROR': {
     ...state,
     loading: false,

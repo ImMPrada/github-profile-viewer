@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import useGitHub from '../../hooks/useGitHub';
-import { Search } from '../../icons';
+import { Search, Language } from '../../icons';
 import './styles.scss';
  
 
@@ -17,6 +17,14 @@ const SearchBox = () => {
 
   return (
     <div className = {`searchbox searchbox-${theme}`}>
+      <Language language='sass' />
+      <Language language='python' />
+      <Language language='react' />
+      <Language language='javascript' />
+      <Language language='html' />
+      <Language language='ruby' />
+      <Language language='css' />
+      <Language language='swift' />
       <Search />
       <input 
         type = "text"
