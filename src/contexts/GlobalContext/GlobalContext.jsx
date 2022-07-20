@@ -24,9 +24,11 @@ export const GlobalProvider = ({ children }) => {
 
   useEffect(() => {
     const cookieTheme = getCookie('devFinder')
+    const systemTheme = checkSystemThemPreference()
+
     if(!cookieTheme) {
-      setTheme(themeKeys.light)
-      createCookie('devFinder', themeKeys.light, 5)
+      setTheme(systemTheme)
+      createCookie('devFinder', systemTheme, 5)
     } else {
       setTheme(cookieTheme)
     }
@@ -86,6 +88,13 @@ export const GlobalProvider = ({ children }) => {
  
     if (theme.length === 2) return theme.pop()
     return null
+  }
+
+  const checkSystemThemPreference = () => {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if(userPrefersDark) return themeKeys.dark
+    return themeKeys.light
   }
 
   const contextVal = {
