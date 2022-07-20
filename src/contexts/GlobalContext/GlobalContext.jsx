@@ -1,5 +1,9 @@
 import React, { useEffect, createContext, useState, useReducer } from 'react';
-import { reducer } from './reducer';
+import { reducer } from '../../js/reducer';
+import { 
+  createCookie,
+  getCookie,
+} from '../../js/coockie';
 
 const themeKeys = {
   dark: 'light',
@@ -72,22 +76,6 @@ export const GlobalProvider = ({ children }) => {
         type: 'CLEAR_ERROR_RESULT'
       })
     }
-  }
-
-  const createCookie = (cookieName, cookieValue, expirationDays) => {
-    const today = new Date()
-    const expirationDate = new Date(today.getTime() + (expirationDays*24*60*60*1000))
-    const expires = "expires="+ expirationDate.toUTCString()
-
-    document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
-  }
-
-  const getCookie = (cookieName) => {
-    const value = `; ${document.cookie}`;
-    const theme = value.split(`; ${cookieName}=`);
- 
-    if (theme.length === 2) return theme.pop()
-    return null
   }
 
   const checkSystemThemPreference = () => {
