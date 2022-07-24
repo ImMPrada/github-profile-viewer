@@ -1,5 +1,9 @@
 import React, { useEffect, createContext, useState, useReducer } from 'react';
-import { reducer } from './reducer';
+import { reducer } from '../../js/reducer';
+import { 
+  createCookie,
+  getCookie,
+} from '../../js/coockie';
 
 const themeKeys = {
   dark: 'light',
@@ -20,13 +24,26 @@ const initialState = {
 export const GlobalContext = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
-  const [theme, setTheme] = useState(themeKeys.light);
+  const [theme, setTheme] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {console.log(state)}, [state])
+  useEffect(() => {
+    const cookieTheme = getCookie('devFinder')
+    const systemTheme = checkSystemThemPreference()
+
+    if(!cookieTheme) {
+      setTheme(systemTheme)
+      createCookie('devFinder', systemTheme, 5)
+    } else {
+      setTheme(cookieTheme)
+    }
+  }, [])
+
 
   const changeTheme = () => {
     setTheme(themeKeys[theme])
+    createCookie('devFinder', themeKeys[theme], 5)
   }
 
   const reinitState = () => {
@@ -61,6 +78,13 @@ export const GlobalProvider = ({ children }) => {
         type: 'CLEAR_ERROR_RESULT'
       })
     }
+  }
+
+  const checkSystemThemPreference = () => {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if(userPrefersDark) return themeKeys.dark
+    return themeKeys.light
   }
 
   const contextVal = {

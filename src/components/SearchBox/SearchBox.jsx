@@ -26,15 +26,22 @@ const SearchBox = () => {
       <Language language='css' />
       <Language language='swift' />
       <Search />
-      <input 
-        type = "text"
-        value = {state.profileToSearch}
-        onChange = {(e) => updateSearchValue(e.target.value)}
-        onFocus = {() => reinitState()}
-        onBlur = {() => clearResult()}
-        placeholder = "Search GitHub username…"
-      />
-      <button onClick = {() => getProfile()}>Search</button>
+      <form onSubmit={(e) =>{
+        e.preventDefault()
+        getProfile()
+      }}>
+        <input 
+          type = "text"
+          value = {state.profileToSearch || ''}
+          onChange = {(e) => {
+            console.log(e.target.value)
+            updateSearchValue(e.target.value)}}
+          onFocus = {() => reinitState()}
+          onBlur = {() => clearResult()}
+          placeholder = "Search GitHub username…"
+        />
+        <button type='submit'>Search</button>
+      </form>
     </div>
   )
 }
