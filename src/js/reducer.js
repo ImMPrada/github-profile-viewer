@@ -28,6 +28,8 @@ const reduceObject = (state, payload = null) => ({
     ...state,
     firstRun: false,
     loading: true,
+    repos: [],
+    languages: [],
   },
   'RESULT_IS_ERROR': {
     ...state,
@@ -35,7 +37,6 @@ const reduceObject = (state, payload = null) => ({
     error: true,
     profile: null,
     oldProfileToSearch: state.profileToSearch,
-    repos: null,
   },
   'RESULT_IS_PROFILE': {
     ...state,
@@ -54,6 +55,10 @@ const reduceObject = (state, payload = null) => ({
     loading: false,
     error: false,
     repos: state.repos.push(payload),
+  },
+  'ADD_LANGUAGE': {
+    ...state,
+    languages: [...state.languages, payload],
   },
   'REPOS_ERROR': {
     ...state,
