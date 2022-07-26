@@ -28,52 +28,22 @@ const useGitHub = () => {
         return axios.get(`${baseURL}${profileName}/repos`)
       })
       .then(res => {
-
-        
-
         const curatedRepos = res.data.map(repo => {
-          const repos = []
-          const curatedRes = {
+          return {
             name: repo.name,
             description: repo.description,
             liveDemo: repo.homepage,
             url: repo.html_url,
-            createdAt: repo.created_at,
             updatedAt: repo.updated_at,
-            contributors: repo.contributors_url,
-            languages: repo.languages_url,
+            languagesUrl: repo.languages_url,
           }
-
-          return axios.get(repo.contributors_url)
-            .then(res => {
-              repos.push({
-                ...curatedRes,
-                contributors: res.data
-              })
-
-              return repos
-            })
-            .then(res => {
-              console.log('PING')
-              console.log(state.repos)
-              dispatch({
-                type: 'RESULT_OF_REPOS',
-                payload: res,
-              })
-            })
         })
 
-        console.log(curatedRepos)
-        return curatedRepos
-
-        // dispatch({
-        //   type: 'RESULT_OF_REPOS',
-        //   payload: curatedRepos
-        // })
+        dispatch({
+          type: 'RESULT_OF_REPOS',
+          payload: curatedRepos,
+        })
       })
-      .then(res => (
-        console.log(res)
-      ))
       .catch(err => {
         dispatch({
           type: 'RESULT_IS_ERROR'
@@ -81,8 +51,27 @@ const useGitHub = () => {
       })
   }
 
+  const getLanguages = (url) => {
+    axios.get(url)
+      .then( res => {
+
+        console.log(res.data)
+        dispatch({
+          type: 'ADD_LANGUAGE',
+          payload: res.data,
+        })
+      })
+      .catch(err => {
+        dispatch({
+          type: 'ADD_LANGUAGE',
+          payload: null,
+        })
+      })
+  }
+
   return {
     getProfile,
+    getLanguages,
   }
 }
 
