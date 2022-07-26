@@ -58,7 +58,7 @@ const reduceObject = (state, payload = null) => ({
   },
   'ADD_LANGUAGE': {
     ...state,
-    languages: [...state.languages, payload],
+    languages: {...state.languages, payload},
   },
   'REPOS_ERROR': {
     ...state,

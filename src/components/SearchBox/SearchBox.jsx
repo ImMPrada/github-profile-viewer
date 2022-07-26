@@ -17,14 +17,14 @@ const SearchBox = () => {
 
   return (
     <div className = {`searchbox searchbox-${theme}`}>
-      <Language language='sass' />
-      <Language language='python' />
-      <Language language='react' />
-      <Language language='javascript' />
-      <Language language='html' />
-      <Language language='ruby' />
-      <Language language='css' />
-      <Language language='swift' />
+      <Language language='SCSS' />
+      <Language language='Python' />
+      <Language language='React' />
+      <Language language='JavaScript' />
+      <Language language='HTML' />
+      <Language language='Ruby' />
+      <Language language='CSS' />
+      <Language language='Swift' />
       <Search />
       <form onSubmit={(e) =>{
         e.preventDefault()
@@ -34,7 +34,6 @@ const SearchBox = () => {
           type = "text"
           value = {state.profileToSearch || ''}
           onChange = {(e) => {
-            console.log(e.target.value)
             updateSearchValue(e.target.value)}}
           onFocus = {() => reinitState()}
           onBlur = {() => clearResult()}

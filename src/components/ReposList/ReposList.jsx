@@ -6,7 +6,8 @@ import './styles.scss';
 
 const Repo = ({
   repo, 
-  getLanguages
+  getLanguages,
+  state,
 }) => {
   const {
     name,
@@ -20,7 +21,7 @@ const Repo = ({
   useEffect(() => {
     if(!languagesUrl) return
 
-    getLanguages(languagesUrl)
+    getLanguages(name, languagesUrl)
   }, [languagesUrl])
 
   return (
@@ -43,6 +44,7 @@ const ReposList = () => {
         key={repo.name}
         repo={repo}
         getLanguages={getLanguages}
+        state = {state}
       />
     ))
   )

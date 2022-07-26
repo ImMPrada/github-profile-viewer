@@ -51,14 +51,13 @@ const useGitHub = () => {
       })
   }
 
-  const getLanguages = (url) => {
+  const getLanguages = (name, url) => {
     axios.get(url)
       .then( res => {
 
-        console.log(res.data)
         dispatch({
           type: 'ADD_LANGUAGE',
-          payload: res.data,
+          payload: {}[name] = res.data,
         })
       })
       .catch(err => {
