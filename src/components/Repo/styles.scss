@@ -1,0 +1,38 @@
+@import '../../styles/constants';
+
+@mixin light-mode {
+  
+  h1 {
+    color: $color-light-black;
+  }
+
+  button {
+    color: $color-light-grey-blue;
+  }
+}
+
+@mixin dark-mode {
+  
+  h1 {
+    color: $color-dark-grey;
+  }
+
+  button {
+    color: $color-dark-grey;
+  }
+}
+
+#main {
+
+  .repo {
+
+  }
+  
+  .repo-dark {
+    @include light-mode;
+  }
+  
+  .repo-light {
+    @include dark-mode;
+  }
+}

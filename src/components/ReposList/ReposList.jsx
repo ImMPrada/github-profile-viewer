@@ -2,27 +2,8 @@ import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { useGitHub } from "../../hooks";
+import { Repo } from '../';
 import './styles.scss';
-
-const Repo = ({
-  repo, 
-}) => {
-  const {
-    name,
-    description,
-    liveDemo,
-    url,
-    updatedAt,
-  } = repo
-  
-  return (
-    <div className="repos-list__content__item">
-      <a href={url}><h4>{name}</h4></a>
-      <a href={liveDemo}><h4>{description || liveDemo ? 'Click for a live demo' : null}</h4></a>
-      <h3>{updatedAt}</h3>
-    </div>
-  )
-}
 
 const repos = (state) => (
   state.repos.filter(repo => repo).map(repo => (
@@ -44,7 +25,6 @@ const ReposList = () => {
     setHidden(!hidden)
     if(!reposList) setReposList(repos(state))
   }
-
 
   return (
     <div className = {`repos-list repos-list-${theme}`}>
