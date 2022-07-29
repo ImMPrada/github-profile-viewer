@@ -12,6 +12,7 @@ const reduceObject = (state, payload = null) => ({
     ...state,
     loading: false,
     profile: null,
+    repos: [],
   },
   'ROLLBACK_PROFILE_TO_SEARCH': {
     ...state,
@@ -27,6 +28,7 @@ const reduceObject = (state, payload = null) => ({
     ...state,
     firstRun: false,
     loading: true,
+    repos: [],
   },
   'RESULT_IS_ERROR': {
     ...state,
@@ -37,11 +39,28 @@ const reduceObject = (state, payload = null) => ({
   },
   'RESULT_IS_PROFILE': {
     ...state,
-    loading: false,
     error: false,
     profile: payload,
     oldProfileToSearch: state.profileToSearch,
-  }
+  },
+  'RESULT_OF_REPOS': {
+    ...state,
+    loading: false,
+    error: false,
+    repos: payload,
+  },
+  'ADD_REPO': {
+    ...state,
+    loading: false,
+    error: false,
+    repos: state.repos.push(payload),
+  },
+  'REPOS_ERROR': {
+    ...state,
+    loading: false,
+    error: false,
+    repos: null,
+  },
 })
 
 

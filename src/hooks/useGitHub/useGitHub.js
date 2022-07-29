@@ -1,5 +1,5 @@
 import {
-  useContext,
+  useContext, useEffect, useState
 } from "react";
 import { GlobalContext } from '../../contexts/GlobalContext'
 import axios from 'axios';
@@ -7,7 +7,7 @@ import axios from 'axios';
 const baseURL = 'https://api.github.com/users/'
 
 
-const useGitHub = (gists, setGists) => {
+const useGitHub = () => {
   const {
     state,
     dispatch,
@@ -24,7 +24,25 @@ const useGitHub = (gists, setGists) => {
         dispatch({
           type: 'RESULT_IS_PROFILE',
           payload: res.data,
-        })    
+        })
+        return axios.get(`${baseURL}${profileName}/repos`)
+      })
+      .then(res => {
+        const curatedRepos = res.data.map(repo => {
+          return {
+            name: repo.name,
+            description: repo.description,
+            liveDemo: repo.homepage,
+            url: repo.html_url,
+            updatedAt: repo.updated_at,
+            languagesUrl: repo.languages_url,
+          }
+        })
+
+        dispatch({
+          type: 'RESULT_OF_REPOS',
+          payload: curatedRepos,
+        })
       })
       .catch(err => {
         dispatch({

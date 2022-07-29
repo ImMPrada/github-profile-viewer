@@ -17,6 +17,7 @@ const initialState = {
   error: 'false',
   loading: false,
   profile: null,
+  repos: [],
 }
 
 
@@ -26,6 +27,7 @@ export const GlobalProvider = ({ children }) => {
   const [theme, setTheme] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState)
 
+  useEffect(() => {console.log(state)}, [state])
   useEffect(() => {
     const cookieTheme = getCookie('devFinder')
     const systemTheme = checkSystemThemPreference()

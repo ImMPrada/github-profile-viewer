@@ -4,6 +4,7 @@ import {
   CardWithLegend,
   DataBox,
   GitCardFooter,
+  ReposList,
  } from '../'
 import './styles.scss';
 
@@ -16,6 +17,7 @@ const ProfileCard = () => {
       <CardWithLegend />
       <DataBox />
       <GitCardFooter />
+      <ReposList />
     </div>
   )
 }

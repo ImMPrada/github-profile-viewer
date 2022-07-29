@@ -2,8 +2,9 @@
 
 @mixin main-base {
 
-  padding-top: 24px;
-  height: 100vh;
+  box-sizing: border-box;
+  padding: 50px 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -1,0 +1,78 @@
+@import '../../styles/constants';
+
+@mixin light-mode {
+  background-color: $color-dark-white;
+
+  .repos-list__content {
+    background-color: $color-light-grey-white;
+    color: $color-dark-black;
+  }
+
+  button {
+    background-color: $color-light-grey-white;
+    color: $color-dark-black;
+
+    &:hover {
+      opacity: 80%;
+    }
+  }
+}
+
+@mixin dark-mode {
+  background-color: $color-dark-black;
+
+  .repos-list__content {
+    background-color: $color-dark-grey-blue;
+    color: $color-dark-white;
+  }
+
+  button {
+    background-color: $color-dark-grey-blue;
+    color: $color-dark-white;
+
+    &:hover {
+      opacity: 80%;
+    }
+  }
+}
+
+#main {
+
+	.repos-list {
+    box-sizing: border-box; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    &--hiden__true {
+      display: none;
+    }
+
+    &--hiden__false {
+      display: block;
+    }
+
+    &__content {
+      margin-top: 30px;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      margin-top: 30px;
+      padding: 10px;
+      border-radius: 5px;
+      @include space-mono-400-regular()
+    }
+
+    &-dark {
+      @include light-mode;
+    }
+    
+    &-light {
+      @include dark-mode;
+    }
+	}
+}
