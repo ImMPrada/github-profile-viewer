@@ -6,7 +6,6 @@ import './styles.scss';
 
 const Repo = ({
   repo, 
-  state,
 }) => {
   const {
     name,
@@ -14,7 +13,6 @@ const Repo = ({
     liveDemo,
     url,
     updatedAt,
-    languagesUrl,
   } = repo
   
   return (
@@ -26,28 +24,35 @@ const Repo = ({
   )
 }
 
+const repos = (state) => (
+  state.repos.filter(repo => repo).map(repo => (
+    <Repo
+      key={repo.name}
+      repo={repo}
+      state = {state}
+    />
+  ))
+)
+
+
 const ReposList = () => {
   const [hidden, setHidden] = useState(true);
+  const [reposList, setReposList] = useState(null);
   const { state, theme } = useContext(GlobalContext);
 
-  const repos = (
-    state.repos.filter(repo => repo).map(repo => (
-      <Repo
-        key={repo.name}
-        repo={repo}
-        state = {state}
-      />
-    ))
-  )
+  const generateList = () => {
+    setHidden(!hidden)
+    if(!reposList) setReposList(repos(state))
+  }
+
 
   return (
     <div className = {`repos-list repos-list-${theme}`}>
       <div className={`repos-list__content repos-list--hiden__${hidden}`}>
-        Here will be displayed the list of repos
-        {repos}
+        {reposList}
       </div>
       { state.repos.length > 0 && 
-        <button className="repos-list__button" onClick={() => setHidden(!hidden)}>
+        <button className="repos-list__button" onClick={() => generateList()}>
           {hidden ? 'Show list of repos' : 'Hide list of repos'}
         </button>
       } 
