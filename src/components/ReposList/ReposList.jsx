@@ -23,7 +23,7 @@ const Repo = ({
 
     getLanguages(name, languagesUrl)
   }, [languagesUrl])
-
+  
   return (
     <div className="repos-list__content__item">
       <a href={url}><h4>{name}</h4></a>
@@ -39,7 +39,7 @@ const ReposList = () => {
   const { getLanguages } = useGitHub();
 
   const repos = (
-    state.repos.map(repo => (
+    state.repos.filter(repo => repo).map(repo => (
       <Repo
         key={repo.name}
         repo={repo}

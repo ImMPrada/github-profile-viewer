@@ -55,9 +55,12 @@ const useGitHub = () => {
     axios.get(url)
       .then( res => {
 
+        const payload = {}
+        payload[name] = res.data
+        console.log(payload)
         dispatch({
           type: 'ADD_LANGUAGE',
-          payload: {}[name] = res.data,
+          payload: {...payload},
         })
       })
       .catch(err => {
