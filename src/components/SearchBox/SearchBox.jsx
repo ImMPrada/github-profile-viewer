@@ -17,14 +17,6 @@ const SearchBox = () => {
 
   return (
     <div className = {`searchbox searchbox-${theme}`}>
-      <Language language='SCSS' />
-      <Language language='Python' />
-      <Language language='React' />
-      <Language language='JavaScript' />
-      <Language language='HTML' />
-      <Language language='Ruby' />
-      <Language language='CSS' />
-      <Language language='Swift' />
       <Search />
       <form onSubmit={(e) =>{
         e.preventDefault()
