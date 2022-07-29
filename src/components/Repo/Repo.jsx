@@ -17,9 +17,23 @@ const Repo = ({
   
   return (
     <div className = {`repo repo-${theme}`}>
-      <a href={url}><h4>{name}</h4></a>
-      <a href={liveDemo}><h4>{description || liveDemo ? 'Click for a live demo' : null}</h4></a>
-      <h3>{updatedAt}</h3>
+      <a 
+        className= "repo__name" 
+        href={url}
+      >
+        {name}
+      </a>
+      <a 
+        className= "repo__info"
+        href={liveDemo}
+      >
+        {description || liveDemo ? 'Click for a live demo' : null}
+      </a>
+      <h5
+        className= "repo__info"
+      >
+        {updatedAt}
+      </h5>
     </div>
   )
 }

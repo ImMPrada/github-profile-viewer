@@ -2,30 +2,67 @@
 
 @mixin light-mode {
   
-  h1 {
-    color: $color-light-black;
-  }
+  .repo {
+    &__name {
+      color: $color-dark-black;
+    }
 
-  button {
-    color: $color-light-grey-blue;
+    &__info {
+      color: $color-dark-grey-blue;
+    }
   }
 }
 
 @mixin dark-mode {
   
-  h1 {
-    color: $color-dark-grey;
-  }
-
-  button {
-    color: $color-dark-grey;
+  .repo {
+    &__name, &__info {
+      color: $color-dark-white;
+    }
   }
 }
 
 #main {
 
   .repo {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
 
+    @media screen and (min-width: $br-s) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    &__name, &__info {
+      @include space-mono-400-regular;
+      line-height: 1.5;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &__info {
+      font-size: 9px;
+
+      @media screen and (min-width: $br-s) {
+        font-size: 12px;
+      }
+    }
+
+    &__name {
+      font-size: 12px;
+
+      @media screen and (min-width: $br-s) {
+        font-size: 16px;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
   }
   
   .repo-dark {
