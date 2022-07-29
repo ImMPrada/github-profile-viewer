@@ -6,7 +6,6 @@ import './styles.scss';
 
 const Repo = ({
   repo, 
-  getLanguages,
   state,
 }) => {
   const {
@@ -17,12 +16,6 @@ const Repo = ({
     updatedAt,
     languagesUrl,
   } = repo
-
-  useEffect(() => {
-    if(!languagesUrl) return
-
-    getLanguages(name, languagesUrl)
-  }, [languagesUrl])
   
   return (
     <div className="repos-list__content__item">
@@ -36,14 +29,12 @@ const Repo = ({
 const ReposList = () => {
   const [hidden, setHidden] = useState(true);
   const { state, theme } = useContext(GlobalContext);
-  const { getLanguages } = useGitHub();
 
   const repos = (
     state.repos.filter(repo => repo).map(repo => (
       <Repo
         key={repo.name}
         repo={repo}
-        getLanguages={getLanguages}
         state = {state}
       />
     ))

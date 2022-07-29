@@ -18,7 +18,6 @@ const initialState = {
   loading: false,
   profile: null,
   repos: [],
-  languages: {},
 }
 
 
