@@ -27,7 +27,7 @@ const GitCardFooter = () => {
         <LocationPin /> 
         <p>{state.profile.location || 'Not Available'}</p>
       </div>
-      <div className={`git-card-footer__element${state.profile.blog ? '' : '-null'}`}>
+      {/* <div className={`git-card-footer__element${state.profile.blog ? '' : '-null'}`}>
         <Url /> 
         <a href = {getLinkData(state.profile.blog).linkTo} 
           target="_blank"
@@ -35,15 +35,15 @@ const GitCardFooter = () => {
         >
           {getLinkData(state.profile.blog).label || 'Not Available'}
         </a>
-      </div>
-      <div className={`git-card-footer__element${state.profile.twitter_username ? '' : '-null'}`}>
+      </div> */}
+      {/* <div className={`git-card-footer__element${state.profile.twitter_username ? '' : '-null'}`}>
         <Twitter /> 
         <p>{state.profile.twitter_username || 'Not Available'}</p>
       </div>
       <div className={`git-card-footer__element${state.profile.company ? '' : '-null'}`}>
         <Offices /> 
         <p>{state.profile.company || 'Not Available'}</p>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -26,18 +26,20 @@ const ReposList = () => {
     if(!reposList) setReposList(repos(state))
   }
 
+  if(state.repos) {
   return (
     <div className = {`repos-list repos-list-${theme}`}>
       <div className={`repos-list__content repos-list--hiden__${hidden}`}>
         {reposList}
       </div>
-      { state.repos.length > 0 && 
         <button className="repos-list__button" onClick={() => generateList()}>
           {hidden ? 'Show list of repos' : 'Hide list of repos'}
         </button>
-      } 
     </div>
   )
+  }
+
+  return null
 }
 
 export default ReposList

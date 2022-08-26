@@ -4,11 +4,11 @@ import './styles.scss';
 
 
 const ErrorMessage = () => {
-  const { theme } = useContext(GlobalContext);
+  const { state, theme } = useContext(GlobalContext);
 
   return (
     <div className = {`error-message`}>
-      <h4>ERROR!</h4>
+      <h4>{state.message ? `Error: ${state.message}` : 'ERROR!'}</h4>
     </div>
   )
 }

@@ -14,7 +14,7 @@ const reduceObject = (state, payload = null) => ({
     loading: false,
     profile: null,
     message: null,
-    repos: [],
+    repos: null,
   },
   'ROLLBACK_PROFILE_TO_SEARCH': {
     ...state,
@@ -30,7 +30,7 @@ const reduceObject = (state, payload = null) => ({
     ...state,
     firstRun: false,
     loading: true,
-    repos: [],
+    repos: null,
   },
   'RESULT_IS_ERROR': {
     ...state,

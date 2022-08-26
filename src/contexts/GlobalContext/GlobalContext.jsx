@@ -18,7 +18,7 @@ const initialState = {
   loading: false,
   profile: null,
   message: null,
-  repos: [],
+  repos: null,
 }
 
 
