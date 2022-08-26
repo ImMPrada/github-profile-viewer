@@ -17,6 +17,7 @@ const initialState = {
   error: 'false',
   loading: false,
   profile: null,
+  message: null,
   repos: [],
 }
 
