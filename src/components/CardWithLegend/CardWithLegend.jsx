@@ -14,12 +14,11 @@ const CardWithLegend = () => {
         <img src={state.profile.avatar} alt="" />
         <div className="card-label__head__legend">
           <div className="card-label__head__legend__info">
-            <h3>{state.profile.name || 'no name user :('}<br/><a href={state.profile.url}>@{state.profile.login}</a></h3>
+            <h3>{state.profile.name || 'no-name user :('}<br/><a href={state.profile.url}>@{state.profile.login}</a></h3>
             <p>joined at: {dateFromDate}</p>
           </div>
         </div>
       </div>
-      <p className="card-label__legend" >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
     </div>
   )
 }
