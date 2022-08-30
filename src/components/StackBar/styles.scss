@@ -1,0 +1,59 @@
+@import '../../styles/constants';
+
+$border-radius: 8px;
+$bar-height: 16px;
+
+@mixin light-mode {
+  
+  .repo {
+    &__name {
+      color: $color-dark-black;
+    }
+
+    &__info {
+      color: $color-dark-grey-blue;
+    }
+  }
+}
+
+@mixin dark-mode {
+  
+  .repo {
+    &__name, &__info {
+      color: $color-dark-white;
+    }
+  }
+}
+
+#main {
+
+  .stack-bar {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    &__item {
+      box-sizing: border-box;
+      display: inline-block;
+      border: 0.5px solid black;
+      height: $bar-height;
+
+      &:first-of-type {
+        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+      }
+
+      &:last-of-type {
+        border-bottom-right-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+      }
+    }
+
+    &__help-text {
+      padding-top: 5px;
+      min-height: 30px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
+}
