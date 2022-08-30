@@ -6,7 +6,7 @@ import './styles.scss'
 
 const CardWithLegend = () => {
   const { state, theme } = useContext(GlobalContext)
-  const dateFromDate = format(new Date(state.profile.updatedAt), 'yyyy/MM/dd')
+  const dateFromDate = format(new Date(state.profile.initialDate), 'yyyy/MM/dd')
 
   return (
     <div className={`card-label card-label-${theme}`}>
