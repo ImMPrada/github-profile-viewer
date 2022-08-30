@@ -23,11 +23,11 @@
 	.profile-card {
     box-sizing: border-box; 
     padding: 33px 24px 38px 24px;
-    margin-left: 24px;
-    margin-right: 24px;
+    margin: 0 24px;
     border-radius: 15px;
-    
+
     @media screen and (min-width: $br-s) {
+      width: 100%;
       padding: 40px;
       padding-bottom: 30px;
       margin: 0;

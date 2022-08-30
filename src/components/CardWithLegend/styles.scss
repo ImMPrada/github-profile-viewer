@@ -35,18 +35,6 @@
     background-color: transparent;
     flex-direction: column;
 
-    &__legend {
-      margin-top: 24px;
-      font-size: 15px;
-      line-height: 1.5;
-
-      @media screen and (min-width: $br-s) {
-        margin: 0;
-        margin-left: 154px;
-        margin-top: -20px;
-      }
-    }
-
     &__head {
 
       display: flex;
