@@ -2,22 +2,28 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { Language } from '../../icons';
 import { format } from 'date-fns'
+import { StackBar } from '../'
+import { languagesBuilder } from '../../js/languagesBuilder';
 import './styles.scss';
 
 const renderLanguages = (languages) => (
-  Object.keys(languages).map(language => {
-    return <Language key={language} name={language} />
+  languages.map(language => {
+    const { name, amount, color } = language
+    return <Language key={name} name={name} />
   })
 )
 
 const Languages = ({
   languages,
 }) => {
-  const { state, theme } = useContext(GlobalContext)
-  console.log(languages)
+  const { theme } = useContext(GlobalContext)
+  const languagesStack = languagesBuilder(languages)
+
+  console.log(languagesStack)
   return (
     <div className={`languages languages-${theme}`}>
-      {renderLanguages(languages)}
+      {renderLanguages(languagesStack)}
+      <StackBar data={languagesStack} />
     </div>
   )
 }

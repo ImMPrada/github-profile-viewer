@@ -1,14 +1,7 @@
-import language from "../icons/Language"
+import gitgubLangColors from "./gitgubLangColors"
 
 const LANGUAGES_COLORS = {
-  Ruby: "#701516",
-  JavaScript: "#f1e05a",
-  Python: "#3572A5",
-  Java: "#b07219",
-  C: "#555555",
-  TypeScript: "#2b7489",
-  HTML: "#e34c26",
-  SCSS: "#a7b0d1",
+  ...gitgubLangColors,
   Other: "#cccccc"
 }
 

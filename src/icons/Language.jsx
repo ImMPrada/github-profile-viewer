@@ -30,7 +30,7 @@ const language = ({
     ),
   }
   
-  return icon[name] || null
+  return (icon[name]) || (name === 'Other' ? null : name);
 }
 
 export default language

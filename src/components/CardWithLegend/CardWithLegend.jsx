@@ -24,7 +24,6 @@ const CardWithLegend = () => {
       <Languages 
         languages={state.profile.languages}
       />
-      <StackBar />
     </div>
   )
 }
