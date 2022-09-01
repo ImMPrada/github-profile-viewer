@@ -4,7 +4,7 @@ import {
 import { GlobalContext } from '../../contexts/GlobalContext'
 import axios from 'axios';
 
-const baseURL = 'http://127.0.0.1:6060/api/v1/profiles/'
+const baseURL = process.env.REACT_APP_API_ENDPOINT;
 
 
 const useGitHub = () => {
