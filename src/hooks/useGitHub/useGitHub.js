@@ -4,7 +4,7 @@ import {
 import { GlobalContext } from '../../contexts/GlobalContext'
 import axios from 'axios';
 
-const baseURL = 'https://api.github.com/users/'
+const baseURL = process.env.REACT_APP_API_ENDPOINT;
 
 
 const useGitHub = () => {
@@ -21,32 +21,24 @@ const useGitHub = () => {
     const profileName = state.profileToSearch
     axios.get(`${baseURL}${profileName}`)
       .then(res => {
-        dispatch({
-          type: 'RESULT_IS_PROFILE',
-          payload: res.data,
-        })
-        return axios.get(`${baseURL}${profileName}/repos`)
-      })
-      .then(res => {
-        const curatedRepos = res.data.map(repo => {
-          return {
-            name: repo.name,
-            description: repo.description,
-            liveDemo: repo.homepage,
-            url: repo.html_url,
-            updatedAt: repo.updated_at,
-            languagesUrl: repo.languages_url,
-          }
-        })
-
-        dispatch({
-          type: 'RESULT_OF_REPOS',
-          payload: curatedRepos,
-        })
+        const response = res.data
+        console.log(res.data)
+        if(response.profile == null) {
+          dispatch({
+            type: 'RESULT_IS_ERROR',
+            payload: response,
+          })  
+        } else {
+          dispatch({
+            type: 'LOAD_RESULTS',
+            payload: response,
+          })
+        }
       })
       .catch(err => {
         dispatch({
-          type: 'RESULT_IS_ERROR'
+          type: 'RESULT_IS_ERROR',
+          payload: null,
         })    
       })
   }

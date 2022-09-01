@@ -36,9 +36,9 @@ const GitCardFooter = () => {
           {getLinkData(state.profile.blog).label || 'Not Available'}
         </a>
       </div>
-      <div className={`git-card-footer__element${state.profile.twitter_username ? '' : '-null'}`}>
+      <div className={`git-card-footer__element${state.profile.twitter ? '' : '-null'}`}>
         <Twitter /> 
-        <p>{state.profile.twitter_username || 'Not Available'}</p>
+        <p>{state.profile.twitter || 'Not Available'}</p>
       </div>
       <div className={`git-card-footer__element${state.profile.company ? '' : '-null'}`}>
         <Offices /> 
