@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { format } from 'date-fns';
+import { Languages, StackBar } from '../';
 import './styles.scss'
 
 
@@ -20,6 +21,9 @@ const CardWithLegend = () => {
         </div>
       </div>
       <p className="card-label__legend" >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+      <Languages 
+        languages={state.profile.languages}
+      />
     </div>
   )
 }

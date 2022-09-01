@@ -1,7 +1,7 @@
 import React from "react";
 
 const language = ({
-  language
+  name
 }) => {
   const icon = {
     SCSS: (
@@ -30,7 +30,7 @@ const language = ({
     ),
   }
   
-  return icon[language] || <span>{language}</span>
+  return (icon[name]) || (name === 'Other' ? null : name);
 }
 
 export default language
