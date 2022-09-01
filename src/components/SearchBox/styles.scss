@@ -55,7 +55,11 @@
         color: $color-dark-white;
         font-size: 14px;
         line-height: 1.5;
-        text-align: left;      
+        text-align: left;
+
+        &:focus {
+          outline: none;
+        }
       }
   
     
