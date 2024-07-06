@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
-import { GlobalContext } from "../../contexts/GlobalContext";
 import { TailSpin } from  'react-loader-spinner'
 import './styles.scss';
 
 
 const Loader = () => {
-  const { theme } = useContext(GlobalContext);
 
   return (
     <div className='Loader'>
